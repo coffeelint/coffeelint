@@ -37,28 +37,31 @@ module.exports = class ColonAssignmentSpacing
         previousToken = tokenApi.peek -1
         nextToken = tokenApi.peek 1
 
-        getSpaceFromToken = (direction) ->
-            switch direction
-                when 'left'
-                    token[2].first_column - previousToken[2].last_column - 1
-                when 'right'
-                    # csx tags 'column' resolves to the beginning of the tag definition, rather
-                    # than the '<'
-                    offset = if nextToken[0] != 'CSX_TAG' then -1 else -2
-                    nextToken[2].first_column - token[2].first_column + offset
-
         checkSpacing = (direction) ->
-            spacing = getSpaceFromToken direction
+            spacing =
+                switch direction
+                    when 'left'
+                        token[2].first_column - previousToken[2].last_column - 1
+                    when 'right'
+                        # csx tags 'column' resolves to the beginning of the tag definition, rather
+                        # than the '<'
+                        offset = if nextToken[0] != 'CSX_TAG' then -1 else -2
+                        nextToken[2].first_column - token[2].first_column + offset
+
             # when spacing is negative, the neighboring token is a newline
-            isSpaced = if spacing < 0
+            if spacing < 0
                 true
             else
-                spacing is parseInt spaceRules[direction]
+                minDirection = parseInt spaceRules['min_' + direction], 10
+                # if a minimal spacing is specified, only check that
+                if minDirection >= 0
+                    spacing >= minDirection
+                    # otherwise check exact spacing
+                else
+                    spacing is parseInt spaceRules[direction], 10
 
-            [isSpaced, spacing]
-
-        [isLeftSpaced, leftSpacing] = checkSpacing 'left'
-        [isRightSpaced, rightSpacing] = checkSpacing 'right'
+        isLeftSpaced = checkSpacing 'left'
+        isRightSpaced = checkSpacing 'right'
 
         if token.csxColon or isLeftSpaced and isRightSpaced
             null
