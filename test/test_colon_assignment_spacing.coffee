@@ -98,12 +98,28 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.isEmpty(errors)
 
-    'Should not complain about strings':
+    'Should not complain about CSX syntax':
         topic:
             '''
-            foo = (stuff) ->
-              throw new Error("Error: stuff required") unless stuff?
-              # do real work
+            <Wrapper prop1="" flag1>
+              <Element prop2={myVal} />
+            </Wrapper>
+            '''
+
+        'will not return an error': (source) ->
+            config =
+                colon_assignment_spacing:
+                    level: 'error'
+                    spacing:
+                        left: 1
+                        right: 1
+            errors = coffeelint.lint(source, config)
+            assert.isEmpty(errors)
+
+    'Inside CSX interpolation':
+        topic:
+            '''
+            <Element prop={{key:somefunc k:v}} />
             '''
 
         'will return an error': (source) ->
@@ -114,6 +130,6 @@ vows.describe(RULE).addBatch({
                         left: 1
                         right: 1
             errors = coffeelint.lint(source, config)
-            assert.isEmpty(errors)
+            assert.lengthOf(errors, 2)
 
 }).export(module)
