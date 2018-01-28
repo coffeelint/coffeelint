@@ -41,6 +41,7 @@
     "test": "./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
     "testrule": "npm run compile && ./vowsrunner.js --spec",
     "posttest": "npm run lint",
+    "prepare": "npm run prepublish",
     "prepublish": "cake prepublish",
     "postpublish": "cake postpublish",
     "publish": "cake publish",
