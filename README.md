@@ -1,4 +1,7 @@
-CoffeeLint
+This is the the same as the older CoffeeLint, with many changes to enale better support new CoffeeScript 2 features.
+CSX files (JSX-style) are fully compatible.
+
+CoffeeLint2
 ==========
 
 CoffeeLint is a style checker that helps keep CoffeeScript code

@@ -39,4 +39,4 @@ module.exports = class EmptyConstructorNeedsParens
 
     handleExpectedCallStart: (isCallStart) ->
         if isCallStart[0] isnt 'CALL_START'
-            return true
+            return { token: isCallStart }

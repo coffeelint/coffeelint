@@ -24,7 +24,13 @@ task 'compile:commandline', 'Compiles commandline.js', ->
     coffeeSync 'src/cache.coffee', 'lib/cache.js'
     coffeeSync 'src/ruleLoader.coffee', 'lib/ruleLoader.js'
     fs.mkdirSync 'lib/reporters' unless fs.existsSync 'lib/reporters'
+    fs.mkdirSync 'lib/rules' unless fs.existsSync 'lib/rules'
     for src in glob.sync('reporters/*.coffee', { cwd: 'src' })
+        # Slice the "coffee" extension of the end and replace with js
+        dest = src[...-6] + 'js'
+        coffeeSync "src/#{src}", "lib/#{dest}"
+
+    for src in glob.sync('rules/*.coffee', { cwd: 'src' })
         # Slice the "coffee" extension of the end and replace with js
         dest = src[...-6] + 'js'
         coffeeSync "src/#{src}", "lib/#{dest}"
@@ -42,21 +48,21 @@ task 'prepublish', 'Prepublish', ->
     if npm_config_argv? and JSON.parse(npm_config_argv).original[0] is 'install'
         return
 
-    copySync 'package.json', '.package.json'
-    packageJson = require './package.json'
+    #copySync 'package.json', '.package.json'
+    #packageJson = require './package.json'
 
-    delete packageJson.dependencies.browserify
-    delete packageJson.dependencies.coffeeify
-    delete packageJson.scripts.install
+    #delete packageJson.dependencies.browserify
+    #delete packageJson.dependencies.coffeeify
+    #delete packageJson.scripts.install
 
-    fs.writeFileSync 'package.json', JSON.stringify(packageJson, undefined, 2)
+    #fs.writeFileSync 'package.json', JSON.stringify(packageJson, undefined, 2)
 
     invoke 'compile'
 
 task 'postpublish', 'Postpublish', ->
     # Revert the package.json back to it's original state
-    exec 'git checkout ./package.json', (err) ->
-      if err
+    #exec 'git checkout ./package.json', (err) ->
+    if err
         console.error('Error reverting package.json: ' + err)
 
 task 'publish', 'publish', ->

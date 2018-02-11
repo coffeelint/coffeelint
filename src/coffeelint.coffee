@@ -198,25 +198,18 @@ coffeelint.registerRule require './rules/no_empty_param_list.coffee'
 coffeelint.registerRule require './rules/no_stand_alone_at.coffee'
 coffeelint.registerRule require './rules/space_operators.coffee'
 coffeelint.registerRule require './rules/duplicate_key.coffee'
-coffeelint.registerRule require './rules/empty_constructor_needs_parens.coffee'
 coffeelint.registerRule require './rules/cyclomatic_complexity.coffee'
 coffeelint.registerRule require './rules/newlines_after_classes.coffee'
 coffeelint.registerRule require './rules/no_unnecessary_fat_arrows.coffee'
 coffeelint.registerRule require './rules/missing_fat_arrows.coffee'
-coffeelint.registerRule(
-    require './rules/non_empty_constructor_needs_parens.coffee'
-)
+coffeelint.registerRule require './rules/non_empty_constructor_needs_parens.coffee'
 coffeelint.registerRule require './rules/no_unnecessary_double_quotes.coffee'
 coffeelint.registerRule require './rules/no_debugger.coffee'
-coffeelint.registerRule(
-    require './rules/no_interpolation_in_single_quotes.coffee'
-)
+coffeelint.registerRule require './rules/no_interpolation_in_single_quotes.coffee'
 coffeelint.registerRule require './rules/no_empty_functions.coffee'
 coffeelint.registerRule require './rules/prefer_english_operator.coffee'
 coffeelint.registerRule require './rules/spacing_after_comma.coffee'
-coffeelint.registerRule(
-    require './rules/transform_messes_up_line_numbers.coffee'
-)
+coffeelint.registerRule require './rules/transform_messes_up_line_numbers.coffee'
 coffeelint.registerRule require './rules/ensure_comprehensions.coffee'
 coffeelint.registerRule require './rules/no_this.coffee'
 coffeelint.registerRule require './rules/eol_last.coffee'

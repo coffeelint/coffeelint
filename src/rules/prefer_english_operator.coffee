@@ -40,4 +40,4 @@ module.exports = class PreferEnglishOperator
                 else undefined
 
         if context?
-            { level, context }
+            { token, level, context }

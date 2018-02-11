@@ -12,4 +12,4 @@ module.exports = class NonEmptyConstructorNeedsParens extends ParentClass
 
     handleExpectedCallStart: (isCallStart) ->
         if isCallStart[0] is 'CALL_START' and isCallStart.generated
-            return true
+            return {token:isCallStart}

@@ -65,8 +65,6 @@ findCoffeeScripts = (paths, extension) ->
 
 # Return an error report from linting the given paths.
 lintFiles = (files, config) ->
-
-
     errorReport = new coffeelint.getErrorReport()
     for file in files
         source = read(file)
