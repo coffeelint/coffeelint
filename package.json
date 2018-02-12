@@ -1,7 +1,7 @@
 {
   "name": "coffeelint2",
   "description": "Lint your CoffeeScript2",
-  "version": "2.1",
+  "version": "2.1.0",
   "homepage": "http://www.coffeelint.org",
   "keywords": [
     "lint",
@@ -27,13 +27,13 @@
     "lodash-es": "^4.17.5",
     "optimist": "^0.6.1",
     "resolve": "^0.6.3",
-    "strip-json-comments": "^1.0.2"
+    "strip-json-comments": "^1.0.2",
+    "coffeescript": "^2.1.2",
+    "browserify": "^13.3.0",
+    "coffeeify": "^1.2.0"
   },
   "devDependencies": {
     "babel-plugin-lodash": "^3.3.2",
-    "coffeescript": "^2.1.2",
-    "browserify": "^13.3.0",
-    "coffeeify": "^1.2.0",
     "underscore": ">=1.4.4",
     "vows": ">=0.8.1"
   },
@@ -43,7 +43,7 @@
     "test": "./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
     "testrule": "npm run compile && ./vowsrunner.js --spec",
     "posttest": "npm run lint",
-    "prepare": "npm install && npm run prepublish",
+    "prepare": "npm run prepublish",
     "prepublish": "cake prepublish",
     "postpublish": "cake postpublish",
     "publish": "cake publish",
