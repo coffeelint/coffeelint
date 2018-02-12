@@ -1,5 +1,6 @@
-This is the the same as the older CoffeeLint, with many changes to enale better support new CoffeeScript 2 features.
-CSX files (JSX-style) are fully compatible.
+This is the the same as the older CoffeeLint, with some changes to enable better support new CoffeeScript 2 features.
+- CJSX files (JSX-style) are fully compatible
+- All rules output column numbers as well.
 
 CoffeeLint2
 ==========
