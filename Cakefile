@@ -48,20 +48,21 @@ task 'prepublish', 'Prepublish', ->
     if npm_config_argv? and JSON.parse(npm_config_argv).original[0] is 'install'
         return
 
-    #copySync 'package.json', '.package.json'
-    #packageJson = require './package.json'
+    copySync 'package.json', '.package.json'
+    packageJson = require './package.json'
 
-    #delete packageJson.dependencies.browserify
-    #delete packageJson.dependencies.coffeeify
-    #delete packageJson.scripts.install
+    delete packageJson.dependencies.browserify
+    delete packageJson.dependencies.coffeeify
+    delete packageJson.scripts.install
+    delete packageJson.scripts.prepare
 
-    #fs.writeFileSync 'package.json', JSON.stringify(packageJson, undefined, 2)
+    fs.writeFileSync 'package.json', JSON.stringify(packageJson, undefined, 2)
 
     invoke 'compile'
 
 task 'postpublish', 'Postpublish', ->
     # Revert the package.json back to it's original state
-    #exec 'git checkout ./package.json', (err) ->
+    exec 'git checkout ./package.json', (err) ->
     if err
         console.error('Error reverting package.json: ' + err)
 

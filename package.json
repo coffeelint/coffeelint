@@ -1,6 +1,6 @@
 {
   "name": "@fellow/coffeelint2",
-  "description": "Lint your CoffeeScript2",
+  "description": "Lint your CoffeeScript v2 code",
   "version": "2.2.0",
   "homepage": "http://www.coffeelint.org",
   "keywords": [
