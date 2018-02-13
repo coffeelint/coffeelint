@@ -63,8 +63,8 @@ task 'prepublish', 'Prepublish', ->
 task 'postpublish', 'Postpublish', ->
     # Revert the package.json back to it's original state
     exec 'git checkout ./package.json', (err) ->
-    if err
-        console.error('Error reverting package.json: ' + err)
+        if err
+            console.error('Error reverting package.json: ' + err)
 
 task 'publish', 'publish', ->
     copySync '.package.json', 'package.json'
