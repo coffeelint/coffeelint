@@ -101,6 +101,11 @@ vows.describe(RULE).addBatch({
     'Should not complain about CSX syntax':
         topic:
             '''
+            object =
+              key1 : 'val'
+              key2 : <span>val</span>
+              key3 : <span />
+
             <Wrapper prop1="" flag1>
               <Element prop2={myVal} />
             </Wrapper>
