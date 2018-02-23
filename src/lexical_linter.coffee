@@ -1,6 +1,6 @@
 class TokenApi
 
-    constructor: (CoffeeScript, source, @config, @tokensByLine, @tokens=null) ->
+    constructor: (CoffeeScript, source, @config, @tokensByLine, @tokens) ->
         @tokens ?= CoffeeScript.tokens(source)
         @lines = source.split('\n')
         @tokensByLine = {}  # A map of tokens by line.
@@ -18,7 +18,7 @@ BaseLinter = require './base_linter.coffee'
 #
 module.exports = class LexicalLinter extends BaseLinter
 
-    constructor: (source, config, rules, CoffeeScript, tokens=undefined) ->
+    constructor: (source, config, rules, CoffeeScript, tokens) ->
         super source, config, rules
 
         @tokenApi = new TokenApi CoffeeScript, source, @config, @tokensByLine, tokens

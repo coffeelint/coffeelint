@@ -202,14 +202,13 @@ vows.describe('commandline').addBatch({
         'works': (config, error, stdout, stderr) ->
             assert.isNotNull(config)
             # This will throw an exception if it doesn't parse.
-            console.log config
             JSON.parse config
             assert.isNotNull(stdout)
             assert.isNull(error)
 
     '--trimconfig with default':
         topic: ->
-            configPath = '../../generated_coffeelint.json'
+            configPath = '../generated_coffeelint.json'
             args = [
                 '-f'
                 configPath

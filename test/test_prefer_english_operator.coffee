@@ -4,7 +4,9 @@ assert = require 'assert'
 coffeelint = require path.join('..', 'lib', 'coffeelint')
 
 configError = { prefer_english_operator: { level: 'error' } }
-configBinaryOnly = { prefer_english_operator: { level: 'error', ops: ['and', 'or'] } }
+configBinaryOnly = {
+    prefer_english_operator: { level: 'error', ops: ['and', 'or'] }
+}
 
 RULE = 'prefer_english_operator'
 

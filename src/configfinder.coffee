@@ -34,7 +34,10 @@ loadNpmConfig = (dir) ->
 loadJSON = (filename, attr = null) ->
     try
         config = JSON.parse(stripComments(fs.readFileSync(filename).toString()))
-        config = config[attr] if attr
+        if attr
+            return null if not config[attr]?
+            config = config[attr]
+
         config.__location__ = filename
         return config
     catch e
@@ -92,8 +95,13 @@ expandModuleNames = (dir, config) ->
 extendConfig = (dir, config) ->
     unless config.extends
         return config
+    try
+        parentConfig = require resolve config.extends,
+            basedir: dir
+            extensions: ['.js', '.coffee', '.json']
+    catch
+        parentConfig = require config.extends
 
-    parentConfig = require resolve config.extends, basedir: dir
     extendedConfig = {}
 
     for ruleName, rule of config
