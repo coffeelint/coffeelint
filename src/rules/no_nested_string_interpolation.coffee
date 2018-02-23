@@ -50,5 +50,5 @@ module.exports = class NoNestedStringInterpolation
                 # Don't make multiple errors for deeply nested interpolation
                 if block.strCount > 1 and not block.error
                     block.error = true
-                    return {token}
+                    return { token }
         return

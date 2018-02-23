@@ -52,7 +52,7 @@ module.exports = class EnsureComprehensions
                 break
 
             if prevToken[0] is '=' and numParenEnds is numParenStarts
-                atEqual = {token}
+                atEqual = { token }
 
             peeker--
 

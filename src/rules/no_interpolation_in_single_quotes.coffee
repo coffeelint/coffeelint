@@ -24,4 +24,4 @@ module.exports = class NoInterpolationInSingleQuotes
         tokenValue = token[1]
         hasInterpolation = tokenValue.match(/^\'.*#\{[^}]+\}.*\'$/)
         if hasInterpolation
-            return {token}
+            return { token }

@@ -20,12 +20,12 @@ module.exports = class NoTrailingWhitespace
     lintLine: (line, lineApi) ->
         unless lineApi.config['no_trailing_whitespace']?.allowed_in_empty_lines
             if regexes.onlySpaces.test(line)
-                return {columnNumber:line.match(regexes.spacesStart).length + 1}
+                return { columnNumber: line.match(regexes.spacesStart).length + 1 }
 
         if regexes.trailingWhitespace.test(line)
             # By default only the regex above is needed.
             unless lineApi.config['no_trailing_whitespace']?.allowed_in_comments
-                return {columnNumber:line.match(regexes.spacesStart).index + 1}
+                return { columnNumber: line.match(regexes.spacesStart).index + 1 }
 
             line = line
             tokens = lineApi.tokensByLine[lineApi.lineNumber]
@@ -41,4 +41,4 @@ module.exports = class NoTrailingWhitespace
                 line = line.replace(str, 'STRING')
 
             if !regexes.lineHasComment.test(line)
-                return {columnNumber:line.match(regexes.spacesStart).index + 1}
+                return { columnNumber: line.match(regexes.spacesStart).index + 1 }

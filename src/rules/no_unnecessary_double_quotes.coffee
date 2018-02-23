@@ -44,7 +44,7 @@ module.exports = class NoUnnecessaryDoubleQuotes
 
         hasLegalConstructs = @isInInterpolation() or @hasSingleQuote(tokenValue)
         if not hasLegalConstructs
-            {token}
+            { token }
 
     isInInterpolation: () ->
         @interpolationLevel > 0
