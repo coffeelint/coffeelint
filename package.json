@@ -1,7 +1,7 @@
 {
   "name": "@fellow/coffeelint2",
   "description": "Lint your CoffeeScript v2 code",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "homepage": "http://www.coffeelint.org",
   "keywords": [
     "lint",
