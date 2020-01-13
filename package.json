@@ -1,5 +1,5 @@
 {
-  "name": "coffeelint",
+  "name": "@coffeelint/cli",
   "description": "Lint your CoffeeScript",
   "version": "2.1.0",
   "homepage": "http://www.coffeelint.org",
@@ -16,14 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/clutchski/coffeelint.git"
+    "url": "git://github.com/coffeelint/coffeelint.git"
   },
   "bin": {
     "coffeelint": "./bin/coffeelint"
   },
   "dependencies": {
-    "browserify": "^13.1.0",
-    "coffeeify": "~1.0.0",
     "coffeescript": "^2.1.0",
     "glob": "^7.0.6",
     "ignore": "^3.0.9",
@@ -44,7 +42,6 @@
     "prepublish": "cake prepublish",
     "postpublish": "cake postpublish",
     "publish": "cake publish",
-    "install": "cake install",
     "lint": "cake compile && ./bin/coffeelint .",
     "lint-csv": "cake compile && ./bin/coffeelint --csv .",
     "lint-jslint": "cake compile && ./bin/coffeelint --jslint .",
