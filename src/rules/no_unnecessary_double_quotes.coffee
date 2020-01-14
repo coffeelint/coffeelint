@@ -24,14 +24,19 @@ module.exports = class NoUnnecessaryDoubleQuotes
     constructor: ->
         @regexps = []
         @interpolationLevel = 0
+        @inCSX = false
+        @CSXCallLevel = 0
 
-    tokens: ['STRING', 'STRING_START', 'STRING_END']
+    tokens: ['STRING', 'STRING_START', 'STRING_END', 'CSX_TAG', 'CALL_START', 'CALL_END']
 
     lintToken: (token, tokenApi) ->
         [type, tokenValue] = token
 
         if type in ['STRING_START', 'STRING_END']
-            return @trackParens arguments...
+            return @trackInterpolation arguments...
+
+        if type in ['CSX_TAG', 'CALL_START', 'CALL_END']
+            return @trackCSX arguments...
 
         stringValue = tokenValue.match(/^\"(.*)\"$/)
 
@@ -42,18 +47,30 @@ module.exports = class NoUnnecessaryDoubleQuotes
         if tokenApi.peek(2)?[0] is 'REGEX_END'
             return false
 
-        hasLegalConstructs = @isInInterpolation() or @hasSingleQuote(tokenValue)
+        hasLegalConstructs = @inCSX or @isInInterpolation() or @hasSingleQuote(tokenValue)
         if not hasLegalConstructs
             { token }
 
     isInInterpolation: () ->
         @interpolationLevel > 0
 
-    trackParens: (token, tokenApi) ->
+    trackInterpolation: (token, tokenApi) ->
         if token[0] is 'STRING_START'
             @interpolationLevel += 1
         else if token[0] is 'STRING_END'
             @interpolationLevel -= 1
+        # We're not linting, just tracking interpolations.
+        null
+
+    trackCSX: (token, tokenApi) ->
+        if token[0] is 'CSX_TAG'
+            @inCSX = true
+        else if token[0] is 'CALL_START'
+            if @inCSX then @CSXCallLevel += 1
+        else if token[0] is 'CALL_END'
+            if @inCSX
+                @CSXCallLevel -= 1
+                @inCSX = false if @CSXCallLevel is 0
         # We're not linting, just tracking interpolations.
         null
 
