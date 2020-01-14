@@ -1,8 +1,8 @@
 {
-  "name": "coffeelint",
+  "name": "@coffeelint/cli",
   "description": "Lint your CoffeeScript",
   "version": "2.1.0",
-  "homepage": "http://www.coffeelint.org",
+  "homepage": "https://coffeelint.github.io/coffeelint/",
   "keywords": [
     "lint",
     "coffeescript",
@@ -16,38 +16,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/clutchski/coffeelint.git"
+    "url": "git://github.com/coffeelint/coffeelint.git"
   },
   "bin": {
     "coffeelint": "./bin/coffeelint"
   },
   "dependencies": {
-    "browserify": "^13.1.0",
-    "coffeeify": "~1.0.0",
-    "coffeescript": "^2.1.0",
-    "glob": "^7.0.6",
+    "coffeescript": "2.4.1",
+    "glob": "^7.1.6",
     "ignore": "^3.0.9",
     "optimist": "^0.6.1",
     "resolve": "^0.6.3",
     "strip-json-comments": "^1.0.2"
   },
   "devDependencies": {
-    "underscore": ">=1.4.4",
-    "vows": ">=0.8.1"
+    "browserify": "^16.5.0",
+    "coffeeify": "^3.0.1",
+    "underscore": "^1.9.2",
+    "vows": "^0.8.3"
   },
   "license": "MIT",
   "scripts": {
     "pretest": "cake compile",
-    "test": "./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
-    "testrule": "npm run compile && ./vowsrunner.js --spec",
+    "test": "node ./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
+    "testrule": "npm run compile && node ./vowsrunner.js --spec",
     "posttest": "npm run lint",
-    "prepublish": "cake prepublish",
-    "postpublish": "cake postpublish",
-    "publish": "cake publish",
-    "install": "cake install",
-    "lint": "cake compile && ./bin/coffeelint .",
-    "lint-csv": "cake compile && ./bin/coffeelint --csv .",
-    "lint-jslint": "cake compile && ./bin/coffeelint --jslint .",
+    "lint": "cake compile && node ./bin/coffeelint .",
+    "lint-csv": "cake compile && node ./bin/coffeelint --reporter csv .",
+    "lint-jslint": "cake compile && node ./bin/coffeelint --reporter jslint .",
     "compile": "cake compile"
   }
 }

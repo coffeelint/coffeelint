@@ -5,7 +5,7 @@ CoffeeLint is a style checker that helps keep CoffeeScript code
 clean and consistent.
 
 For guides on installing, using and configuring CoffeeLint, head over
-[here](http://www.coffeelint.org).
+[here](https://coffeelint.github.io/coffeelint/).
 
 To suggest a feature, report a bug, or general discussion, head over
 [here](http://github.com/clutchski/coffeelint/issues/).
@@ -80,7 +80,7 @@ description: '''
 	</pre>
 	'''
 ```
-[Coffeelint's website](http://www.coffeelint.org/) generates each
+[Coffeelint's website](https://coffeelint.github.io/coffeelint//) generates each
 rule's documentation based on this `description` property.
 
 When adding a new rule, it is suggested that you check that the documentation
