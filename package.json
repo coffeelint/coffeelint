@@ -42,8 +42,8 @@
     "testrule": "npm run compile && node ./vowsrunner.js --spec",
     "posttest": "npm run lint",
     "lint": "cake compile && node ./bin/coffeelint .",
-    "lint-csv": "cake compile && ./bin/coffnode eelint --csv .",
-    "lint-jslint": "cake compile && node ./bin/coffeelint --jslint .",
+    "lint-csv": "cake compile && node ./bin/coffeelint --reporter csv .",
+    "lint-jslint": "cake compile && node ./bin/coffeelint --reporter jslint .",
     "compile": "cake compile"
   }
 }
