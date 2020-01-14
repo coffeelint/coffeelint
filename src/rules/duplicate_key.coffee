@@ -50,7 +50,7 @@ module.exports = class DuplicateKey
         # Added a prefix to not interfere with things like "constructor".
         key = "identifier-#{key}"
         if @currentScope[key]
-            return true
+            return { token }
         else
             @currentScope[key] = token
             null

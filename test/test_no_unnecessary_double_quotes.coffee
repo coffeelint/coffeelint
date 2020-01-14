@@ -170,4 +170,17 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.lengthOf(errors, 0)
 
+    'Test csx #2':
+        topic:
+            '''
+            class Example
+              hello: ->
+                <Hello></Hello>
+            '''
+
+        'should not generate an error': (source) ->
+            config = { no_unnecessary_double_quotes: { level: 'error' } }
+            errors = coffeelint.lint(source, config)
+            assert.lengthOf(errors, 0)
+
 }).export(module)
