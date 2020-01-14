@@ -115,6 +115,6 @@ Using IcedCoffeeScript [does break][IcedCoffeeScript] the `cyclomatic_complexity
 }
 ```
  
-[options]: http://www.coffeelint.org/#options
+[options]: https://coffeelint.github.io/coffeelint//#options
 [rules]: https://www.npmjs.org/search?q=coffeelintrule
 [IcedCoffeeScript]: https://github.com/clutchski/coffeelint/issues/349#issuecomment-67737784
