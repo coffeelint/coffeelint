@@ -5,9 +5,6 @@ browserify = require 'browserify'
 CoffeeScript = require 'coffeescript'
 { exec } = require 'child_process'
 
-copySync = (src, dest) ->
-    fs.writeFileSync dest, fs.readFileSync(src)
-
 coffeeSync = (input, output) ->
     coffee = fs.readFileSync(input).toString()
     fs.writeFileSync output, CoffeeScript.compile(coffee)
@@ -42,32 +39,3 @@ task 'compile:browserify', 'Uses browserify to compile coffeelint', ->
     b.add [ './src/coffeelint.coffee' ]
     b.transform require('coffeeify')
     b.bundle().pipe fs.createWriteStream('lib/coffeelint.js')
-
-task 'prepublish', 'Prepublish', ->
-    { npm_config_argv } = process.env
-    if npm_config_argv? and JSON.parse(npm_config_argv).original[0] is 'install'
-        return
-
-    copySync 'package.json', '.package.json'
-    packageJson = require './package.json'
-
-    delete packageJson.dependencies.browserify
-    delete packageJson.dependencies.coffeeify
-    delete packageJson.scripts.install
-
-    fs.writeFileSync 'package.json', JSON.stringify(packageJson, undefined, 2)
-
-    invoke 'compile'
-
-task 'postpublish', 'Postpublish', ->
-    # Revert the package.json back to it's original state
-    exec 'git checkout ./package.json', (err) ->
-      if err
-        console.error('Error reverting package.json: ' + err)
-
-task 'publish', 'publish', ->
-    copySync '.package.json', 'package.json'
-
-task 'install', 'Install', ->
-    unless require("fs").existsSync("lib/commandline.js")
-        invoke 'compile'

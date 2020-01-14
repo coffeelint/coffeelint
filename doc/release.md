@@ -62,5 +62,5 @@ just to make sure it's fine before I publish.
     npm publish
     git checkout package.json
 
-[changelog]: http://www.coffeelint.org/#changelog
+[changelog]: https://coffeelint.github.io/coffeelint//#changelog
 [review]: https://github.com/clutchski/coffeelint/compare/v1.8.1...master
