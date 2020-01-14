@@ -30,7 +30,7 @@
         "level": "error"
     },
     "no_unnecessary_double_quotes": {
-        "level": "error"
+        "level": "ignore"
     },
     "braces_spacing": {
         "level": "error",
