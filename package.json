@@ -24,10 +24,10 @@
   "dependencies": {
     "coffeescript": "2.4.1",
     "glob": "^7.1.6",
-    "ignore": "^3.0.9",
+    "ignore": "^5.1.4",
     "optimist": "^0.6.1",
-    "resolve": "^0.6.3",
-    "strip-json-comments": "^1.0.2"
+    "resolve": "^1.14.2",
+    "strip-json-comments": "^3.0.1"
   },
   "devDependencies": {
     "browserify": "^16.5.0",
