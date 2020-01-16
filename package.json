@@ -36,13 +36,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "pretest": "cake compile",
-    "test": "node ./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
+    "test": "npm run compile && node ./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
     "testrule": "npm run compile && node ./vowsrunner.js --spec",
-    "posttest": "npm run lint",
-    "lint": "cake compile && node ./bin/coffeelint .",
-    "lint-csv": "cake compile && node ./bin/coffeelint --reporter csv .",
-    "lint-jslint": "cake compile && node ./bin/coffeelint --reporter jslint .",
+    "lint": "npm run compile && node ./bin/coffeelint .",
+    "lint-csv": "npm run compile && node ./bin/coffeelint --reporter csv .",
+    "lint-jslint": "npm run compile && node ./bin/coffeelint --reporter jslint .",
     "compile": "cake compile"
   }
 }

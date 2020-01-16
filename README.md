@@ -45,7 +45,7 @@ adding a new rule_ below).
 9. Squash all commits into a single commit when done.
 10. Submit a pull request.
 
-[![Github Actions](https://github.com/coffeelint/coffeelint/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/coffeelint/coffeelint/actions)
+[![Github Actions](https://github.com/coffeelint/coffeelint/workflows/CI/badge.svg?branch=master)](https://github.com/coffeelint/coffeelint/actions)
 
 ### Updating documentation when adding a new rule
 
