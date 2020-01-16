@@ -22,7 +22,7 @@
     "coffeelint": "./bin/coffeelint"
   },
   "dependencies": {
-    "coffeescript": "2.4.1",
+    "coffeescript": "2.5.0",
     "glob": "^7.1.6",
     "ignore": "^5.1.4",
     "optimist": "^0.6.1",
