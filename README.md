@@ -8,16 +8,17 @@ For guides on installing, using and configuring CoffeeLint, head over
 [here](https://coffeelint.github.io/coffeelint/).
 
 To suggest a feature, report a bug, or general discussion, head over
-[here](http://github.com/clutchski/coffeelint/issues/).
+[here](http://github.com/coffeelint/coffeelint/issues/).
 
 ## Team
 
 Current:
 
-- [Shuan Wang](https://github.com/swang)
+https://github.com/orgs/coffeelint/people
 
 Past:
 
+- [Shuan Wang](https://github.com/swang)
 - [Asa Ayers](https://github.com/AsaAyers)
 - [Matt Perpick](https://github.com/clutchski)
 
@@ -34,7 +35,7 @@ Past:
 3. Create your rule in a single file as `src/rules/your_rule_here.coffee`, using the existing
    rules as a guide.
    You may examine the AST and tokens using
-   [http://asaayers.github.io/clfiddle/](http://asaayers.github.io/clfiddle/).
+   http://asaayers.github.io/clfiddle/.
 4. Add your test file `my_test.coffee` to the `test` directory.
 5. Register your rule in `src/coffeelint.coffee`.
 6. Run your test using `npm run testrule test/your_test_here.coffee`.
@@ -44,7 +45,7 @@ adding a new rule_ below).
 9. Squash all commits into a single commit when done.
 10. Submit a pull request.
 
-[![Build Status](https://secure.travis-ci.org/clutchski/coffeelint.svg)](http://travis-ci.org/clutchski/coffeelint)
+[![Github Actions](https://github.com/coffeelint/coffeelint/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/coffeelint/coffeelint/actions)
 
 ### Updating documentation when adding a new rule
 
@@ -80,7 +81,7 @@ description: '''
 	</pre>
 	'''
 ```
-[Coffeelint's website](https://coffeelint.github.io/coffeelint//) generates each
+[Coffeelint's website](https://coffeelint.github.io/coffeelint/) generates each
 rule's documentation based on this `description` property.
 
 When adding a new rule, it is suggested that you check that the documentation
