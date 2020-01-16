@@ -4,6 +4,10 @@ assert = require 'assert'
 coffeelint = require path.join('..', 'lib', 'coffeelint')
 
 sources =
+    monoObject:
+        noSpaces: '{foo}'
+        oneSpace: '{ foo }'
+        twoSpaces: '{  foo  }'
     emptyObject:
         noSpaces: '{}'
         oneSpace: '{ }'
@@ -49,10 +53,14 @@ sources =
 configs =
     oneEmptyObjectSpace:
         braces_spacing: { level: 'error', empty_object_spaces: 1 }
+    oneMonoObjectSpace:
+        braces_spacing: { level: 'error', mono_object_spaces: 1 }
     oneSpace:
         braces_spacing: { level: 'error', spaces: 1 }
     zeroEmptyObjectSpaces:
         braces_spacing: { level: 'error', empty_object_spaces: 0 }
+    zeroMonoObjectSpaces:
+        braces_spacing: { level: 'error', mono_object_spaces: 0 }
     zeroSpaces:
         braces_spacing: { level: 'error', spaces: 0 }
 
@@ -211,6 +219,43 @@ vows.describe(RULE).addBatch({
                        configs.oneEmptyObjectSpace,
                        ['There should be 1 space inside "{"',
                         'There should be 1 space inside "}"'])
+
+
+    'enabled with mono object spaces set to 0':
+        'no spaces inside both braces':
+            shouldPass(sources.monoObject.noSpaces,
+                       configs.zeroMonoObjectSpaces)
+
+        'one space inside on both braces':
+            shouldFail(sources.monoObject.oneSpace,
+                       configs.zeroMonoObjectSpaces,
+                       ['There should be 0 spaces inside "{"',
+                        'There should be 0 spaces inside "}"'])
+
+        'two spaces inside on both braces':
+            shouldFail(sources.monoObject.twoSpaces,
+                       configs.zeroMonoObjectSpaces,
+                       ['There should be 0 spaces inside "{"',
+                        'There should be 0 spaces inside "}"'])
+
+
+    'enabled with mono object spaces set to 1':
+        'no spaces inside both braces':
+            shouldFail(sources.monoObject.noSpaces,
+                       configs.oneMonoObjectSpace,
+                       ['There should be 1 space inside "{"',
+                        'There should be 1 space inside "}"'])
+
+        'one space inside on both braces':
+            shouldPass(sources.monoObject.oneSpace,
+                       configs.oneMonoObjectSpace)
+
+        'two spaces inside on both braces':
+            shouldFail(sources.monoObject.twoSpaces,
+                       configs.oneMonoObjectSpace,
+                       ['There should be 1 space inside "{"',
+                        'There should be 1 space inside "}"'])
+
 
     'handles generated tokens being on the same line (in outputted code)':
         'no spaces inside both braces':
