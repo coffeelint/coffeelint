@@ -1,9 +1,7 @@
 fs = require 'fs'
 glob = require 'glob'
-path = require 'path'
 browserify = require 'browserify'
 CoffeeScript = require 'coffeescript'
-{ exec } = require 'child_process'
 
 coffeeSync = (input, output) ->
     coffee = fs.readFileSync(input).toString()
