@@ -14,7 +14,7 @@ To suggest a feature, report a bug, or general discussion, head over
 
 Current:
 
-https://github.com/orgs/coffeelint/people
+- https://github.com/orgs/coffeelint/people
 
 Past:
 
@@ -33,17 +33,12 @@ Past:
 1. Fork the repo locally.
 2. Run `npm install` to get dependencies.
 3. Create your rule in a single file as `src/rules/your_rule_here.coffee`, using the existing
-   rules as a guide.
-   You may examine the AST and tokens using
-   http://asaayers.github.io/clfiddle/.
+   rules as a guide. You may examine the AST and tokens using http://asaayers.github.io/clfiddle/.
 4. Add your test file `my_test.coffee` to the `test` directory.
 5. Register your rule in `src/coffeelint.coffee`.
 6. Run your test using `npm run testrule test/your_test_here.coffee`.
 7. Run the whole tests suite using `npm test`.
-8. Check that your rule's documentation is generated properly (see _Updating documentation when
-adding a new rule_ below).
-9. Squash all commits into a single commit when done.
-10. Submit a pull request.
+8. Submit a pull request.
 
 [![Github Actions](https://github.com/coffeelint/coffeelint/workflows/CI/badge.svg?branch=master)](https://github.com/coffeelint/coffeelint/actions)
 
@@ -83,15 +78,3 @@ description: '''
 ```
 [Coffeelint's website](https://coffeelint.github.io/) generates each
 rule's documentation based on this `description` property.
-
-When adding a new rule, it is suggested that you check that the documentation
-for your new rule is generated correctly. In order to do that, you should
-follow these steps:
-* Checkout the branch that contains the changes adding the new rule.
-* Run `npm run compile`.
-* Checkout the `gh-pages` branch: `git checkout origin/gh-pages`.
-* Run `cp lib/coffeelint.js js/coffeelint.js`.
-* Regenerate the HTML documentation: `rake updatehtml`. Note that you will
-probably need to install rake.
-* Open the `index.html` file with your favorite browser and make sure that your
-rule's documentation is generated properly.
