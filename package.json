@@ -8,7 +8,7 @@
     "coffeescript",
     "coffee-script"
   ],
-  "author": "Matthew Perpick <clutchski@gmail.com>",
+  "author": "Tony Brix <Tony@Brix.ninja> (https://Tony.Brix.ninja)",
   "main": "./lib/coffeelint.js",
   "engines": {
     "node": ">=8.x"
