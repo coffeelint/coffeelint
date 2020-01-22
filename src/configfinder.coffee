@@ -120,8 +120,8 @@ exports.getConfig = (filename = null) ->
 
     config = getConfig(dir)
 
-    dir = path.dirname(config.__location__)
     if config
+        dir = path.dirname(config.__location__)
         config = extendConfig(dir, config)
         config = expandModuleNames(dir, config)
 
