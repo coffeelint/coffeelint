@@ -2,7 +2,7 @@
   "name": "@coffeelint/cli",
   "description": "Lint your CoffeeScript",
   "version": "3.0.0",
-  "homepage": "https://coffeelint.github.io/coffeelint/",
+  "homepage": "https://coffeelint.github.io/",
   "keywords": [
     "lint",
     "coffeescript",
@@ -41,6 +41,7 @@
     "lint": "npm run compile && node ./bin/coffeelint .",
     "lint-csv": "npm run compile && node ./bin/coffeelint --reporter csv .",
     "lint-jslint": "npm run compile && node ./bin/coffeelint --reporter jslint .",
-    "compile": "cake compile"
+    "compile": "cake compile",
+    "prepublish": "npm run compile"
   }
 }

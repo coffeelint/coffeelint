@@ -44,5 +44,5 @@ rule.
 
 [semver]: semver.org
 [rules]: https://www.npmjs.org/search?q=coffeelintrule
-[API]: https://coffeelint.github.io/coffeelint//#api
-[CustomRules]: https://coffeelint.github.io/coffeelint//#api
+[API]: https://coffeelint.github.io/#api
+[CustomRules]: https://coffeelint.github.io/#api

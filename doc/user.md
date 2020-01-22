@@ -105,7 +105,7 @@ chosen flavor breaks things it's up to you to contact the maintainer and see if
 they are willing to bring their implementation in line with the official
 CoffeeScript.
 
-Using IcedCoffeeScript [does break][IcedCoffeeScript] the `cyclomatic_complexity` rule 
+Using IcedCoffeeScript [does break][IcedCoffeeScript] the `cyclomatic_complexity` rule
 
 ```json
 {
@@ -114,7 +114,7 @@ Using IcedCoffeeScript [does break][IcedCoffeeScript] the `cyclomatic_complexity
     }
 }
 ```
- 
-[options]: https://coffeelint.github.io/coffeelint//#options
+
+[options]: https://coffeelint.github.io/#options
 [rules]: https://www.npmjs.org/search?q=coffeelintrule
 [IcedCoffeeScript]: https://github.com/clutchski/coffeelint/issues/349#issuecomment-67737784
