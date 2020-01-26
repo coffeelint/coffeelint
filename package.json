@@ -42,6 +42,6 @@
     "lint-csv": "npm run compile && node ./bin/coffeelint --reporter csv .",
     "lint-jslint": "npm run compile && node ./bin/coffeelint --reporter jslint .",
     "compile": "cake compile",
-    "prepublish": "npm run compile"
+    "prepublishOnly": "npm run compile"
   }
 }
