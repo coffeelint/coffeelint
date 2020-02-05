@@ -36,7 +36,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "npm run compile && node ./vowsrunner.js --spec test/*.coffee test/*.litcoffee",
+    "test": "npm run compile && node ./vowsrunner.js --dot-matrix test/*.coffee test/*.litcoffee",
     "testrule": "npm run compile && node ./vowsrunner.js --spec",
     "lint": "npm run compile && node ./bin/coffeelint .",
     "lint-csv": "npm run compile && node ./bin/coffeelint --reporter csv .",
