@@ -11,8 +11,15 @@ assert = require 'assert'
 coffeelint = require path.join('..', 'lib', 'coffeelint')
 PassThroughReporter = require path.join('..', 'lib', 'reporters', 'passthrough')
 CheckStyleReporter = require path.join('..', 'lib', 'reporters', 'checkstyle')
+CSVReporter = require path.join('..', 'lib', 'reporters', 'csv')
 
 class TestCheckStyleReporter extends CheckStyleReporter
+    output = ''
+
+    print: (input) ->
+        output += input + '\n'
+
+class TestCSVReporter extends CSVReporter
     output = ''
 
     print: (input) ->
@@ -67,5 +74,32 @@ vows.describe('reporters').addBatch({
             result = reporter.publish()
 
             assert.ok(!result.includes 'context:')
+
+    'Make sure CSV is properly escaped':
+        topic:
+            '''
+            { a: b}
+            '''
+
+        'Make sure CSV columns are quoted, and newlines are escaped': (code) ->
+            config =
+                braces_spacing:
+                    level: 'error'
+
+            errorReport = coffeelint.getErrorReport()
+            errorReport.lint 'stdin', code, config
+
+            # Construct a new reporter and publish the results. You can use the
+            # built in reporters, or make your own.
+            reporter = new TestCSVReporter errorReport
+            result = reporter.publish().split(/\n/)
+            output = result[1].split(',')
+
+            assert.equal(output[0], 'stdin')
+            assert.equal(output[1], 1)
+            assert.equal(output[2], '')
+            assert.equal(output[3], 'error')
+            assert.equal(output[4], '"Curly braces must have the proper spacing ' +
+                'There should be 0 spaces inside ""{"""')
 
 }).export(module)
