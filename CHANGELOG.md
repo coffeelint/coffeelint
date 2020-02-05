@@ -1,1 +1,1 @@
-https://coffeelint.github.io/coffeelint/#changelog
+https://coffeelint.github.io/#changelog

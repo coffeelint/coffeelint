@@ -44,10 +44,10 @@ any configuration for the current project, it will check for a
 What are the rules?
 ===================
 
-See [coffeelint.org][options] for all of the built in rules. Every rule has a
-`level` of `ignore`, `error`, or `warn`. Most rules have a single behavior and
-`level` is the only thing to configure. `indentation` is one of the exceptions,
-it has a `value` that defaults to 2.
+See [Coffeelint.github.io](https://coffeelint.github.io/#options) for all of
+the built in rules. Every rule has a `level` of `ignore`, `error`, or `warn`.
+Most rules have a single behavior and `level` is the only thing to configure.
+`indentation` is one of the exceptions, it has a `value` that defaults to 2.
 
 How do I temporarily disable a rule?
 ====================================
@@ -62,16 +62,14 @@ How do I temporarily disable a rule?
 What about 3rd party rules?
 ===========================
 
-CoffeeLint 0.6 to 1.3 required 3rd party rules to be installed globally (`[sudo]
-npm install -g <coffeelint-rule>`).
-
 Starting with CoffeeLint 1.4 rules can (and should) be installed per project.
 Consult the `README.md` or npmjs.org page for exact configuration instructions.
 It's generally the same as built in rules but with the addition of a `module`
 attribute to specify the correct module name. It may not exactly match the rule
 name.
 
-All rules should have a `coffeelintrule` tag on [npmjs.org][rules].
+All rules should have a `coffeelintrule` tag on
+[npmjs.org](https://www.npmjs.org/search?q=coffeelintrule).
 
 How do I use JSX (ReactJS)
 ==========================
@@ -105,7 +103,7 @@ chosen flavor breaks things it's up to you to contact the maintainer and see if
 they are willing to bring their implementation in line with the official
 CoffeeScript.
 
-Using IcedCoffeeScript [does break][IcedCoffeeScript] the `cyclomatic_complexity` rule 
+Using IcedCoffeeScript [does break](https://github.com/clutchski/coffeelint/issues/349#issuecomment-67737784) the `cyclomatic_complexity` rule
 
 ```json
 {
@@ -114,7 +112,3 @@ Using IcedCoffeeScript [does break][IcedCoffeeScript] the `cyclomatic_complexity
     }
 }
 ```
- 
-[options]: https://coffeelint.github.io/coffeelint//#options
-[rules]: https://www.npmjs.org/search?q=coffeelintrule
-[IcedCoffeeScript]: https://github.com/clutchski/coffeelint/issues/349#issuecomment-67737784
