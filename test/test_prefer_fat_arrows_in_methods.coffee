@@ -1,7 +1,7 @@
 path = require 'path'
 vows = require 'vows'
 assert = require 'assert'
-{inspect} = require 'util'
+{ inspect } = require 'util'
 coffeelint = require path.join('..', 'lib', 'coffeelint')
 
 RULE = 'prefer_fat_arrows_in_methods'
@@ -29,9 +29,9 @@ shouldPass = (source) ->
 
 vows.describe(RULE).addBatch({
 
-    'empty function'            : shouldPass '->'
+    'empty function': shouldPass '->'
     'function without far arrow': shouldPass '-> ->'
-    'function with far arrow'   : shouldPass '-> =>'
+    'function with far arrow': shouldPass '-> =>'
 
     'nested functions with this inside':
         'with inner fat arrow': shouldPass '-> =>'
@@ -39,82 +39,82 @@ vows.describe(RULE).addBatch({
         'with both fat arrows': shouldPass '=> =>'
 
     'deeply nested functions':
-        'with thin arrow'     : shouldPass '-> -> -> -> ->'
-        'with fat arrow'      : shouldPass '-> -> -> -> =>'
+        'with thin arrow': shouldPass '-> -> -> -> ->'
+        'with fat arrow': shouldPass '-> -> -> -> =>'
         'with wrong fat arrow': shouldPass '-> -> => -> ->'
 
     'class instance method':
-        'without fat arrow': shouldError """
+        'without fat arrow': shouldError '''
             class A
                 @m: -> ->
-            """
-        'with fat arrow': shouldPass """
+            '''
+        'with fat arrow': shouldPass '''
             class A
                 @m: -> =>
-            """
+            '''
 
     'class method':
-        'without fat arrow': shouldError """
+        'without fat arrow': shouldError '''
             class A
                 m: -> ->
-            """
-        'with fat arrow': shouldPass """
+            '''
+        'with fat arrow': shouldPass '''
             class A
                 m: -> =>
-            """
+            '''
 
     'function in class body':
-        'without fat arrow': shouldPass """
+        'without fat arrow': shouldPass '''
             class A
                 f = -> ->
                 x: 2
-            """
-        'with fat arrow': shouldPass """
+            '''
+        'with fat arrow': shouldPass '''
             class A
                 f = -> =>
                 x: 2
-            """
+            '''
 
     'function inside class instance method':
-        'with fat arrow': shouldPass """
+        'with fat arrow': shouldPass '''
             class A
                 m: -> =>
-            """
-        'without fat arrow': shouldError """
+            '''
+        'without fat arrow': shouldError '''
             class A
                 m: -> ->
-            """
+            '''
 
     'mixture of class methods and function in class body':
-        'with fat arrow': shouldPass """
+        'with fat arrow': shouldPass '''
             class A
                 f = -> ->
                 m: -> =>
                 @n: -> =>
                 o: -> =>
                 @p: -> =>
-            """
+            '''
 
-        'without fat arrow': shouldError """
+        'without fat arrow': shouldError '''
             class A
                 f = -> ->
                 m: -> ->
                 @n: -> ->
                 o: -> ->
                 @p: -> ->
-            """, 4
+            ''', 4
 
     'using prototype':
-        'with fat arrow': shouldPass """
+        'with fat arrow': shouldPass '''
             class A
 
             A::f = -> =>
-            """
+            '''
 
-        'without fat arrow': shouldError """
+        'without fat arrow': shouldError '''
             class A
 
             A::f = -> ->
-            """
+            '''
 
 }).export(module)
