@@ -2,9 +2,16 @@ module.exports = class SpacingAfterComma
     rule:
         name: 'spacing_after_comma'
         level: 'ignore'
+        ignore_elision: false
         message: 'a space is required after commas'
         description: '''
             This rule checks to make sure you have a space after commas.
+            Consecutive commas are allowed when skipping array elements
+            if "ignore_elision" is true.
+            <pre><code>
+            # ignore_elision: true
+            [,, c,, e, f] = [1, 2, 3, 4, 5, 6]
+            </code></pre>
             '''
 
     tokens: [',', 'REGEX_START', 'REGEX_END']
@@ -21,6 +28,9 @@ module.exports = class SpacingAfterComma
         if type is 'REGEX_END'
             @inRegex = false
             return
+
+        { ignore_elision } = tokenApi.config[@rule.name]
+        return null if ignore_elision and ',' in tokenApi.peek(1)
 
         unless token.spaced or token.newLine or @isGenerated(token, tokenApi) or
                 @isRegexFlag(token, tokenApi)
