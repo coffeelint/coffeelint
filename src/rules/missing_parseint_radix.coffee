@@ -27,4 +27,4 @@ module.exports = class ParseintRadix
 
         if functionName is 'parseInt'
             [callEnd] = tokenApi.peek(2)
-            return callEnd is 'CALL_END'
+            return { token } if callEnd is 'CALL_END'
