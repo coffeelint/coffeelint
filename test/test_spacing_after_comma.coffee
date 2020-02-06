@@ -95,4 +95,17 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.equal(errors.length, 0)
 
+    'Disallow consecutive commas when skipping array elements':
+        topic:
+            '''
+            [,, c,, e, f] = [1, 2, 3, 4, 5, 6]
+            '''
+
+        'should not error': (source) ->
+            config = spacing_after_comma:
+                level: 'error'
+                ignore_elision: false
+            errors = coffeelint.lint(source, config)
+            assert.equal(errors.length, 2)
+
 }).export(module)
