@@ -10,7 +10,7 @@ module.exports = class PreferLogicalOperator
             Use ==, !=, !, &&, ||, true, false instead.
             '''
 
-    tokens: ['COMPARE', 'UNARY', 'LOGIC', 'BOOL', 'COMPOUND_ASSIGN']
+    tokens: ['COMPARE', 'UNARY', 'BOOL', 'COMPOUND_ASSIGN', '&&', '||']
 
     lintToken: (token, tokenApi) ->
         # Compare the actual token with the lexed token.
@@ -31,4 +31,4 @@ module.exports = class PreferLogicalOperator
                 else undefined
 
         if context?
-            { context }
+            { token, context }
