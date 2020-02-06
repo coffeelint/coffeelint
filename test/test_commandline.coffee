@@ -13,11 +13,12 @@ coffeelint = require path.join('..', 'lib', 'coffeelint')
 coffeelintPath = path.join('..', 'bin', 'coffeelint')
 
 execOptions = cwd: __dirname
-# Run the coffeelint command line with the given
-# args. Callback will be called with (error, stdout,
-# stderr)
+cmdPrefix = ''
+cmdPrefix = 'node ' if process.platform is 'win32'
+# Run the coffeelint command line with the given args.
+# Callback will be called with (error, stdout, stderr)
 commandline = (args, callback) ->
-    exec("#{coffeelintPath} #{args.join(' ')}", execOptions, callback)
+    exec("#{cmdPrefix}#{coffeelintPath} #{args.join(' ')}", execOptions, callback)
 
 
 process.env.HOME = ''
@@ -29,7 +30,7 @@ process.env.COFFEELINT_CONFIG = ''
 # an unrealistic example when rules can be installed with `npm install -g
 # some-custom-rule`. This will setup a fake version of node_modules to a
 # relative path doesn't have to be used.
-process.env.NODE_PATH += ':' + path.resolve(__dirname,
+process.env.NODE_PATH += path.delimiter + path.resolve(__dirname,
     'fixtures/mock_node_modules/')
 
 vows.describe('commandline').addBatch({
@@ -300,8 +301,12 @@ vows.describe('commandline').addBatch({
 
         'with working string':
             topic: () ->
-                exec("echo y = 1 | #{coffeelintPath} --noconfig --stdin",
-                    execOptions, this.callback)
+                args = [
+                    '--noconfig'
+                    '--stdin'
+                ]
+                proc = commandline args, this.callback
+                proc.stdin.end 'y = 1'
                 return undefined
 
             'passes': (error, stdout, stderr) ->
@@ -312,8 +317,12 @@ vows.describe('commandline').addBatch({
 
         'with failing string due to whitespace':
             topic: () ->
-                exec("echo 'x = 1 '| #{coffeelintPath} --noconfig --stdin",
-                    execOptions, this.callback)
+                args = [
+                    '--noconfig'
+                    '--stdin'
+                ]
+                proc = commandline args, this.callback
+                proc.stdin.end 'x = 1 '
                 return undefined
 
             'fails': (error, stdout, stderr) ->
@@ -322,8 +331,13 @@ vows.describe('commandline').addBatch({
 
         'Autoloads config based on cwd':
             topic: () ->
-                exec('cat fixtures/cyclo_fail.coffee | ' +
-                    coffeelintPath + ' --stdin', execOptions, this.callback)
+                args = [
+                    '--stdin'
+                ]
+                file = path.resolve __dirname, 'fixtures/cyclo_fail.coffee'
+                contents = fs.readFileSync file, encoding: 'utf8'
+                proc = commandline args, this.callback
+                proc.stdin.end contents
                 return undefined
 
             'fails': (error, stdout, stderr) ->
@@ -336,9 +350,28 @@ vows.describe('commandline').addBatch({
 
         'with working string':
             topic: () ->
-                exec("echo 'This is Markdown\n\n    y = 1' | " +
-                    "#{coffeelintPath} --noconfig --stdin --literate",
-                    execOptions, this.callback)
+                args = [
+                    '--noconfig'
+                    '--stdin'
+                    '--literate'
+                ]
+                proc = commandline args, this.callback
+                proc.stdin.end 'This is Markdown\n\n    y = 1'
+                return undefined
+
+            'passes': (error, stdout, stderr) ->
+                assert.isNull(error)
+                assert.isEmpty(stderr)
+                assert.isString(stdout)
+                assert.include(stdout, '0 errors and 0 warnings')
+
+        'with working file':
+            topic: () ->
+                args = [
+                    '--noconfig'
+                    'fixtures/literate/working.litcoffee'
+                ]
+                commandline args, this.callback
                 return undefined
 
             'passes': (error, stdout, stderr) ->
@@ -349,9 +382,13 @@ vows.describe('commandline').addBatch({
 
         'with failing string due to whitespace':
             topic: () ->
-                exec("echo 'This is Markdown\n\n    x = 1 \n    y=2'| " +
-                    "#{coffeelintPath} --noconfig --stdin --literate",
-                    execOptions, this.callback)
+                args = [
+                    '--noconfig'
+                    '--stdin'
+                    '--literate'
+                ]
+                proc = commandline args, this.callback
+                proc.stdin.end 'This is Markdown\n\n    x = 1 \n    y=2'
                 return undefined
 
             'fails': (error, stdout, stderr) ->
