@@ -1,8 +1,8 @@
 {
-  "name": "coffeelint",
+  "name": "@coffeelint/cli",
   "description": "Lint your CoffeeScript",
   "version": "1.16.1",
-  "homepage": "http://www.coffeelint.org",
+  "homepage": "https://coffeelint.github.io",
   "keywords": [
     "lint",
     "coffeescript",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/clutchski/coffeelint.git"
+    "url": "git://github.com/coffeelint/coffeelint.git"
   },
   "bin": {
     "coffeelint": "./bin/coffeelint"
