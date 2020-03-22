@@ -1,7 +1,7 @@
 {
   "name": "@coffeelint/cli",
   "description": "Lint your CoffeeScript",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "homepage": "https://coffeelint.github.io/",
   "keywords": [
     "lint",
