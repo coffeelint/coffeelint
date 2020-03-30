@@ -29,7 +29,7 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "browserify": "^16.5.0",
+    "browserify": "^16.5.1",
     "coffeeify": "^3.0.1",
     "underscore": "^1.9.2",
     "vows": "^0.8.3"
