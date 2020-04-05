@@ -170,7 +170,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.lengthOf(errors, 0)
 
-    'Test csx #2':
+    'Test JSX #2':
         topic:
             '''
             class Example
