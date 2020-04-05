@@ -29,15 +29,16 @@ module.exports = class MaxLineLength
     lintLine: (line, lineApi) ->
         max = lineApi.config[@rule.name]?.value
         limitComments = lineApi.config[@rule.name]?.limitComments
+        isCommentLine = regexes.literateComment.test(line)
 
         lineLength = line.replace(/\s+$/, '').length
-        if lineApi.isLiterate() and regexes.literateComment.test(line)
+        if lineApi.isLiterate() and isCommentLine
             lineLength -= 2
 
         if max and max < lineLength and not regexes.longUrlComment.test(line)
 
             unless limitComments
-                if lineApi.getLineTokens().length is 0
+                if isCommentLine
                     return
 
             return {
