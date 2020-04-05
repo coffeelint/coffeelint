@@ -7,6 +7,12 @@
     "spaces": 0,
     "empty_object_spaces": 0
   },
+  "bracket_spacing": {
+    "level": "ignore",
+    "spaces": 0,
+    "empty_array_spaces": 0,
+    "exceptions": []
+  },
   "camel_case_classes": {
     "level": "error"
   },
@@ -21,8 +27,8 @@
     }
   },
   "cyclomatic_complexity": {
-    "value": 10,
-    "level": "ignore"
+    "level": "ignore",
+    "value": 10
   },
   "duplicate_key": {
     "level": "error"
@@ -53,6 +59,9 @@
     "level": "ignore",
     "is_strict": false
   },
+  "missing_parseint_radix": {
+    "level": "warn"
+  },
   "newlines_after_classes": {
     "value": 3,
     "level": "ignore"
@@ -75,8 +84,8 @@
     "strict": true
   },
   "no_implicit_parens": {
-    "strict": true,
-    "level": "ignore"
+    "level": "ignore",
+    "strict": true
   },
   "no_interpolation_in_single_quotes": {
     "level": "ignore"
@@ -89,6 +98,9 @@
   },
   "no_private_function_fat_arrows": {
     "level": "warn"
+  },
+  "no_spaces": {
+    "level": "ignore"
   },
   "no_stand_alone_at": {
     "level": "ignore"
@@ -121,13 +133,26 @@
   },
   "prefer_english_operator": {
     "level": "ignore",
+    "doubleNotLevel": "ignore",
+    "ops": [
+      "and",
+      "or",
+      "not",
+      "is",
+      "isnt"
+    ]
+  },
+  "prefer_logical_operator": {
+    "level": "ignore",
     "doubleNotLevel": "ignore"
   },
   "space_operators": {
-    "level": "ignore"
+    "level": "ignore",
+    "default_parameters": true
   },
   "spacing_after_comma": {
-    "level": "ignore"
+    "level": "ignore",
+    "ignore_elision": false
   },
   "transform_messes_up_line_numbers": {
     "level": "warn"
