@@ -38,14 +38,12 @@ module.exports = class ColonAssignmentSpacing
         nextToken = tokenApi.peek 1
 
         checkSpacing = (direction) ->
+            offset = -1
             spacing =
                 switch direction
                     when 'left'
-                        token[2].first_column - previousToken[2].last_column - 1
+                        token[2].first_column - previousToken[2].last_column + offset
                     when 'right'
-                        # csx tags 'column' resolves to the beginning of the tag definition, rather
-                        # than the '<'
-                        offset = if nextToken[0] != 'CSX_TAG' then -1 else -2
                         nextToken[2].first_column - token[2].first_column + offset
 
             # when spacing is negative, the neighboring token is a newline
@@ -63,7 +61,7 @@ module.exports = class ColonAssignmentSpacing
         isLeftSpaced = checkSpacing 'left'
         isRightSpaced = checkSpacing 'right'
 
-        if token.csxColon or isLeftSpaced and isRightSpaced
+        if token.jsxColon or isLeftSpaced and isRightSpaced
             null
         else
             token: token
