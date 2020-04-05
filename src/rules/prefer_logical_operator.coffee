@@ -17,6 +17,10 @@ module.exports = class PreferLogicalOperator
         { first_column, last_column } = token[2]
         line = tokenApi.lines[tokenApi.lineNumber]
         actual_token = line[first_column..last_column]
+
+        if token[0] is 'COMPOUND_ASSIGN' and actual_token in ['or=', 'and=']
+            actual_token = token.origin[1]
+
         context =
             switch actual_token
                 when 'is' then 'Replace "is" with "=="'
