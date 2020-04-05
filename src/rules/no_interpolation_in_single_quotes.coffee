@@ -22,6 +22,6 @@ module.exports = class NoInterpolationInSingleQuotes
 
     lintToken: (token, tokenApi) ->
         tokenValue = token[1]
-        hasInterpolation = tokenValue.match(/^\'.*#\{[^}]+\}.*\'$/)
+        hasInterpolation = tokenValue.match(/^.*#\{[^}]+\}.*$/)
         if hasInterpolation
             return { token }
