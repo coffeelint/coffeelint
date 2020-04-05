@@ -52,7 +52,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.equal(errors.length, 0)
 
-    'Should not complain about CSX syntax':
+    'Should not complain about JSX syntax':
         topic:
             '''
             render = -> <Wrapper prop1="" flag1>
@@ -67,7 +67,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.isEmpty(errors)
 
-    'Inside CSX interpolation':
+    'Inside JSX interpolation':
         topic:
             '''
             render = -> <Element prop={{k1:1,k2:v}}>{

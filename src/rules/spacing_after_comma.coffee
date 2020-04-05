@@ -36,7 +36,7 @@ module.exports = class SpacingAfterComma
                 @isRegexFlag(token, tokenApi)
             return { token }
 
-    # Coffeescript does some code generation when using CSX syntax, and it adds
+    # Coffeescript does some code generation when using JSX syntax, and it adds
     # brackets & commas that are not marked as generated. The only way to check
     # these is to see if the comma has the same column number as the last token.
     isGenerated: (token, tokenApi) ->
