@@ -24,10 +24,10 @@ module.exports = class NoUnnecessaryDoubleQuotes
     constructor: ->
         @regexps = []
         @interpolationLevel = 0
-        @inCSX = false
-        @CSXCallLevel = 0
+        @inJSX = false
+        @JSXCallLevel = 0
 
-    tokens: ['STRING', 'STRING_START', 'STRING_END', 'CSX_TAG', 'CALL_START', 'CALL_END']
+    tokens: ['STRING', 'STRING_START', 'STRING_END', 'JSX_TAG', 'CALL_START', 'CALL_END']
 
     lintToken: (token, tokenApi) ->
         [type, tokenValue] = token
@@ -35,19 +35,21 @@ module.exports = class NoUnnecessaryDoubleQuotes
         if type in ['STRING_START', 'STRING_END']
             return @trackInterpolation arguments...
 
-        if type in ['CSX_TAG', 'CALL_START', 'CALL_END']
-            return @trackCSX arguments...
+        if type in ['JSX_TAG', 'CALL_START', 'CALL_END']
+            return @trackJSX arguments...
+        
+        isSingleQuote = tokenValue.quote is "'"
+        isSingleBlock = tokenValue.quote is "'''"
 
-        stringValue = tokenValue.match(/^\"(.*)\"$/)
-
-        return false unless stringValue # no double quotes, all OK
+        if isSingleQuote or isSingleBlock # no double quotes, all OK
+            return false
 
         # When CoffeeScript generates calls to RegExp it double quotes the 2nd
         # parameter. Using peek(2) becuase the peek(1) would be a CALL_END
         if tokenApi.peek(2)?[0] is 'REGEX_END'
             return false
 
-        hasLegalConstructs = @inCSX or @isInInterpolation() or @hasSingleQuote(tokenValue)
+        hasLegalConstructs = @inJSX or @isInInterpolation() or @hasSingleQuote(tokenValue)
         if not hasLegalConstructs
             { token }
 
@@ -62,15 +64,15 @@ module.exports = class NoUnnecessaryDoubleQuotes
         # We're not linting, just tracking interpolations.
         null
 
-    trackCSX: (token, tokenApi) ->
-        if token[0] is 'CSX_TAG'
-            @inCSX = true
+    trackJSX: (token, tokenApi) ->
+        if token[0] is 'JSX_TAG'
+            @inJSX = true
         else if token[0] is 'CALL_START'
-            if @inCSX then @CSXCallLevel += 1
+            if @inJSX then @JSXCallLevel += 1
         else if token[0] is 'CALL_END'
-            if @inCSX
-                @CSXCallLevel -= 1
-                @inCSX = false if @CSXCallLevel is 0
+            if @inJSX
+                @JSXCallLevel -= 1
+                @inJSX = false if @JSXCallLevel is 0
         # We're not linting, just tracking interpolations.
         null
 

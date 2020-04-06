@@ -7,10 +7,10 @@ fs = require 'fs'
 vows = require 'vows'
 assert = require 'assert'
 { spawn, exec } = require 'child_process'
-coffeelint = require path.join('..', 'lib', 'coffeelint')
+coffeelint = require path.resolve(process.cwd(), 'lib', 'coffeelint')
 
 # The path to the command line tool.
-coffeelintPath = path.join('..', 'bin', 'coffeelint')
+coffeelintPath = path.resolve(process.cwd(), 'bin', 'coffeelint')
 
 execOptions = cwd: __dirname
 cmdPrefix = ''
@@ -185,10 +185,9 @@ vows.describe('commandline').addBatch({
 
     'with configuration file':
         topic: () ->
-            configPath = '../generated_coffeelint.json'
-            configFile = fs.openSync configPath, 'w'
+            configPath = path.resolve process.cwd(), 'generated_coffeelint.json'
             commandline ['--makeconfig'], (error, stdout, stderr) =>
-                fs.writeSync configFile, stdout
+                fs.writeFileSync configPath, stdout
                 assert.isNull(error)
                 args = [
                     '-f'

@@ -17,7 +17,7 @@ module.exports = class NoNestedStringInterpolation
             </pre>
             '''
 
-    tokens: ['CSX_TAG', 'CALL_START', 'CALL_END', 'STRING_START', 'STRING_END']
+    tokens: ['JSX_TAG', 'CALL_START', 'CALL_END', 'STRING_START', 'STRING_END']
 
     constructor: ->
         @blocks = []
@@ -28,7 +28,7 @@ module.exports = class NoNestedStringInterpolation
 
         block = @blocks[@blocks.length - 1]
 
-        if tag is 'CSX_TAG'
+        if tag is 'JSX_TAG'
             @blocks.push []
             return
 

@@ -116,7 +116,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.isEmpty(errors)
 
-    'Should not complain about CSX syntax':
+    'Should not complain about JSX syntax':
         topic:
             '''
             object =
@@ -139,7 +139,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.isEmpty(errors)
 
-    'Inside CSX interpolation':
+    'Inside JSX interpolation':
         topic:
             '''
             <Element prop={{key:somefunc k:v}} />
