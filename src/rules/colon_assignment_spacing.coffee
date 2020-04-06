@@ -38,13 +38,12 @@ module.exports = class ColonAssignmentSpacing
         nextToken = tokenApi.peek 1
 
         checkSpacing = (direction) ->
-            offset = -1
             spacing =
                 switch direction
                     when 'left'
-                        token[2].first_column - previousToken[2].last_column + offset
+                        token[2].first_column - previousToken[2].last_column - 1
                     when 'right'
-                        nextToken[2].first_column - token[2].first_column + offset
+                        nextToken[2].first_column - token[2].first_column - 1
 
             # when spacing is negative, the neighboring token is a newline
             if spacing < 0
