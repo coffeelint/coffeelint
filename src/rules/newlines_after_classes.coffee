@@ -34,34 +34,24 @@ module.exports = class NewlinesAfterClasses
                 @classBracesCount--
                 @classCount--
                 if @classCount is 0 and @classBracesCount is 0
-                    befores = 1
                     afters = 1
                     comment = 0
                     outdent = token.origin[2].first_line
                     start = Math.min(lineNumber, outdent)
-                    trueLine = Infinity
+                    trueLine = start + 1
 
                     while (/^\s*(#|$)/.test(lines[start + afters]))
                         if /^\s*#/.test(lines[start + afters])
                             comment += 1
-                        else
-                            trueLine = Math.min(trueLine, start + afters)
                         afters += 1
-
-                    while (/^\s*(#|$)/.test(lines[start - befores]))
-                        if /^\s*#/.test(lines[start - befores])
-                            comment += 1
-                        else
-                            trueLine = Math.min(trueLine, start - befores)
-                        befores += 1
 
                     # add up blank lines, subtract comments, subtract 2 because
                     # before/after counters started at 1.
-                    got = afters + befores - comment - 2
+                    got = afters - comment - 1
 
                     # if `got` and `ending` don't match throw an error _unless_
                     # we are at the end of the file.
-                    if got isnt ending and trueLine + ending <= lines.length
+                    if got isnt ending and trueLine + got isnt lines.length
                         return {
                             context: "Expected #{ending} got #{got}"
                             lineNumber: trueLine

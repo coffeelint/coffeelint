@@ -388,4 +388,56 @@ vows.describe(RULE).addBatch({
             assert.equal(errors[0].rule, RULE)
             assert.equal(errors[0].context, 'Expected 3 got 1')
 
+    'Fix #28, empty lines inside class should not count':
+        topic:
+            '''
+            class TestClass
+              constructor: ->
+                @locked = true
+                @count = 0
+
+              increment: ->
+                return if @locked
+
+
+                count += 1
+
+            console.log 1
+            '''
+
+        'passes when newlines_after_classes is set to 1': (source) ->
+            config =
+                newlines_after_classes:
+                    level: 'error'
+                    value: 1
+
+            errors = coffeelint.lint(source, config)
+            assert.equal(errors.length, 0)
+
+        'fails when newlines_after_classes is set to 2': (source) ->
+            config =
+                newlines_after_classes:
+                    level: 'error'
+                    value: 2
+
+            errors = coffeelint.lint(source, config)
+            assert.equal(errors.length, 1)
+            assert.equal(errors[0].lineNumber, 11)
+            assert.equal(errors[0].line, '')
+            assert.equal(errors[0].rule, RULE)
+            assert.equal(errors[0].context, 'Expected 2 got 1')
+
+        'fails when newlines_after_classes is set to 3': (source) ->
+            config =
+                newlines_after_classes:
+                    level: 'error'
+                    value: 3
+
+            errors = coffeelint.lint(source, config)
+            assert.equal(errors.length, 1)
+            assert.equal(errors[0].lineNumber, 11)
+            assert.equal(errors[0].line, '')
+            assert.equal(errors[0].rule, RULE)
+            assert.equal(errors[0].context, 'Expected 3 got 1')
+
 }).export(module)
