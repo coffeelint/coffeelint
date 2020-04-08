@@ -4,12 +4,12 @@ module.exports = class NewlinesAfterClasses
         name: 'newlines_after_classes'
         value: 3
         level: 'ignore'
-        message: 'Wrong count of newlines between a class and other code'
+        message: 'Wrong count of blank lines between a class and other code'
         description: '''
-            <p>Checks the number of newlines between classes and other code.</p>
+            <p>Checks the number of blank lines between classes and other code.</p>
 
             Options:
-            - <pre><code>value</code></pre> - The number of required newlines
+            - <pre><code>value</code></pre> - The number of required blank lines
             after class definitions. Defaults to 3.
             '''
 
