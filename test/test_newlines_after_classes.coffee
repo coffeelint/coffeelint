@@ -68,7 +68,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.equal(errors.length, 1)
             error = errors[0]
-            msg = 'Wrong count of newlines between a class and other code'
+            msg = 'Wrong count of blank lines between a class and other code'
             assert.equal(error.message, msg)
             assert.equal(error.rule, 'newlines_after_classes')
             assert.equal(error.lineNumber, 8)
@@ -85,7 +85,7 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.equal(errors.length, 1)
             error = errors[0]
-            msg = 'Wrong count of newlines between a class and other code'
+            msg = 'Wrong count of blank lines between a class and other code'
             assert.equal(error.message, msg)
             assert.equal(error.rule, 'newlines_after_classes')
             assert.equal(error.lineNumber, 8)
