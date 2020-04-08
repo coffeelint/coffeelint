@@ -37,9 +37,7 @@ module.exports = class NoUnnecessaryFatArrows
             node.body.contains(@isThis)? or
             node.body.contains((child) =>
                 unless @astApi.getNodeName(child)
-                    child.constructor?.name is 'SuperCall' or
-                    (child.isSuper? and child.isSuper)
-                    # TODO: after <1.10.0 is not supported, remove child.isSuper
+                    child.constructor?.name is 'SuperCall'
                 else
                     @isFatArrowCode(child) and @needsFatArrow(child))?
         )

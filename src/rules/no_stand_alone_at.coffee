@@ -16,8 +16,7 @@ module.exports = class NoStandAloneAt
     lintToken: (token, tokenApi) ->
         [nextToken] = tokenApi.peek()
         noSpace = not token.spaced
-        # TODO: after <1.10.0 is not supported, remove 'IDENTIFIER' here
-        isProp = nextToken in ['IDENTIFIER', 'PROPERTY']
+        isProp = nextToken in ['PROPERTY']
         isAStart = nextToken in ['INDEX_START', 'CALL_START'] # @[] or @()
         isDot = nextToken is '.'
 
@@ -25,10 +24,8 @@ module.exports = class NoStandAloneAt
         # @::foo is valid, but @:: behaves inconsistently and is planned for
         # removal. Technically @:: is a stand alone ::, but I think it makes
         # sense to group it into no_stand_alone_at
-        #
-        # TODO: after v1.10.0 is not supported, remove 'IDENTIFIER' here
         isProtoProp = nextToken is '::' and
-            tokenApi.peek(2)?[0] in ['IDENTIFIER', 'PROPERTY']
+            tokenApi.peek(2)?[0] in ['PROPERTY']
 
         # Return an error after an '@' token unless:
         # 1: there is a '.' afterwards (isDot)
