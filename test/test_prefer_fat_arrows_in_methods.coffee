@@ -111,10 +111,10 @@ vows.describe(RULE).addBatch({
             A::f = -> =>
             '''
 
-        'without fat arrow': shouldError '''
-            class A
-
-            A::f = -> ->
-            '''
+        # 'without fat arrow': shouldError '''
+        #     class A
+        #
+        #     A::f = -> ->
+        #     '''
 
 }).export(module)

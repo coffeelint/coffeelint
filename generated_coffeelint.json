@@ -142,6 +142,9 @@
       "isnt"
     ]
   },
+  "prefer_fat_arrows_in_methods": {
+    "level": "ignore"
+  },
   "prefer_logical_operator": {
     "level": "ignore",
     "doubleNotLevel": "ignore"
