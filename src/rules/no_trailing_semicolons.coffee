@@ -33,6 +33,9 @@ module.exports = class NoTrailingSemicolons
         if tokenLen is 1 and lineTokens[0][0] in stopTokens
             return
 
+        if tokenLen is 2 and lineTokens[1].generated and lineTokens[0][0] in stopTokens
+            return
+
         newLine = line
         if tokenLen > 1 and lineTokens[tokenLen - 1][0] is 'TERMINATOR'
 

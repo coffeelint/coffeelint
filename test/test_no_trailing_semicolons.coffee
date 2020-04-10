@@ -66,6 +66,16 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, {})
             assert.isEmpty(errors)
 
+    'Trailing semicolon in last line comment':
+        topic:
+            '''
+            undefined\n# comment;
+            '''
+
+        'are ignored': (source) ->
+            errors = coffeelint.lint(source, {})
+            assert.isEmpty(errors)
+
     'Trailing semicolon in comments with no semicolon in statement':
         topic:
             '''
