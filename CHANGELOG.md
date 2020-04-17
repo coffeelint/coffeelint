@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/coffeelint/coffeelint/compare/v3.2.1...v3.2.2) (2020-04-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency resolve to ^1.16.0 ([#56](https://github.com/coffeelint/coffeelint/issues/56)) ([f16af4d](https://github.com/coffeelint/coffeelint/commit/f16af4d81aa4a9dfd3106d15bc94d49a8af24d2b))
+
 ## [3.2.1](https://github.com/coffeelint/coffeelint/compare/v3.2.0...v3.2.1) (2020-04-17)
 
 ### Bug Fixes
