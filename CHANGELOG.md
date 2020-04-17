@@ -135,10 +135,10 @@ The v1.12.x versions are considered buggy and you should upgrade to v1.13.x if y
 
 ## [1.9.6](https://github.com/coffeelint/coffeelint/compare/v1.9.4...v1.9.6) (2015-05-05)
 
-- Fix no_interpolation_in_single_quotes to only handle single quotes #400
-- Avoid non-standard String.prototype.trimRight #401
-- Strip comments from config file before parsing #407
-- missing_fat_arrows: fix constructor checking in strict mode #409
+- Fix no_interpolation_in_single_quotes to only handle single quotes [#400](https://github.com/clutchski/coffeelint/pull/400)
+- Avoid non-standard String.prototype.trimRight [#401](https://github.com/clutchski/coffeelint/pull/401)
+- Strip comments from config file before parsing [#407](https://github.com/clutchski/coffeelint/pull/407)
+- missing_fat_arrows: fix constructor checking in strict mode [#409](https://github.com/clutchski/coffeelint/pull/409)
 - Use configfilter to expand module names
 
 ## [1.9.4](https://github.com/coffeelint/coffeelint/compare/v1.9.3...v1.9.4) (2015-04-06)
