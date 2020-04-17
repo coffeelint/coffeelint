@@ -20,18 +20,41 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm test
-      run: |
-        npm ci
-        npm test
+    - name: Install Dependencies
+      run: npm ci
+    - name: Run Tests 👩🏽‍💻
+      run: npm test
 
   Lint:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-    - name: npm lint
-      run: |
-        npm ci
-        npm run lint
+    - name: Install Dependencies
+      run: npm ci
+    - name: Lint ✨
+      run: npm run lint
+
+  Release:
+    needs: [Test, Lint]
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm ci
+      - name: Release 🎉
+        uses: cycjimmy/semantic-release-action@v2
+        id: semantic_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish coffeelint.github.io
+        if: steps.semantic_release.outputs.new_release_published == 'true'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          repository: coffeelint/coffeelint.github.io
+          event-type: compile
+          client-payload: '{"coffeelint_version": "${{ steps.semantic_release.outputs.new_release_version }}"}'
