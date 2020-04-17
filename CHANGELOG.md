@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/coffeelint/coffeelint/compare/v3.2.0...v3.2.1) (2020-04-17)
+
+
+### Bug Fixes
+
+* **deps:** use semantic-release ([9c90153](https://github.com/coffeelint/coffeelint/commit/9c90153a106990f0fad4424e12b64fb7f332fdbb))
+
 <div> <h3 class="changelog_header">v3.2.0</h3> <small
           class="changelog_date">- <a
           href="https://github.com/coffeelint/coffeelint/compare/v3.1.3...v3.2.0">2020.04.10<a></a></small>
