@@ -1,3 +1,10 @@
+## [3.2.5](https://github.com/coffeelint/coffeelint/compare/v3.2.4...v3.2.5) (2020-05-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ignore to ^5.1.5 ([#62](https://github.com/coffeelint/coffeelint/issues/62)) ([ac86e49](https://github.com/coffeelint/coffeelint/commit/ac86e49faf9e4249bd486b1b0017433528ab0eff))
+
 ## [3.2.4](https://github.com/coffeelint/coffeelint/compare/v3.2.3...v3.2.4) (2020-04-23)
 
 
