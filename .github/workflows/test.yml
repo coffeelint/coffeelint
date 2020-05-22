@@ -11,15 +11,17 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [8.x, 12.x, 13.x]
+        node_version: [8.x, 'lts/*', node]
 
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Install Node
+      uses: dcodeIO/setup-node-nvm@master
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node_version }}
     - name: Install Dependencies
       run: npm ci
     - name: Run Tests 👩🏽‍💻
@@ -29,7 +31,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Code
+      uses: actions/checkout@v2
     - name: Install Dependencies
       run: npm ci
     - name: Lint ✨
