@@ -1,12 +1,12 @@
 regexes =
     literateComment: ///
-        ^
-        \#\s # This is prefixed on MarkDown lines.
+        ^\s*\#\s # indentation, up to comment followed by at least one space.
     ///
     longUrlComment: ///
-      ^\s*\# # indentation, up to comment
-      \s*
-      http[^\s]+$ # Link that takes up the rest of the line without spaces.
+      ^\s*\#\s # indentation, up to comment followed by at least one space.
+      .* # Any string may precedes url
+      http[^\s]+ # Actual link
+      .*$ # Line may end by other things
     ///
 
 module.exports = class MaxLineLength
