@@ -1,3 +1,12 @@
+## [3.2.7](https://github.com/coffeelint/coffeelint/compare/v3.2.6...v3.2.7) (2020-06-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ignore to ^5.1.8 ([#68](https://github.com/coffeelint/coffeelint/issues/68)) ([dc316a4](https://github.com/coffeelint/coffeelint/commit/dc316a4a627f4b6d979d99d577ad439981f9b7f3))
+* Improve max_line_length rule with comment behavior ([#67](https://github.com/coffeelint/coffeelint/issues/67)) ([aa7930a](https://github.com/coffeelint/coffeelint/commit/aa7930a9aca0e572d4e79d33e50736e7d145b034))
+* **deps:** update dependency ignore to ^5.1.8 ([2a6b1d0](https://github.com/coffeelint/coffeelint/commit/2a6b1d0ef7ab74c46fe8420569496b5606eeb490))
+
 ## [3.2.6](https://github.com/coffeelint/coffeelint/compare/v3.2.5...v3.2.6) (2020-05-23)
 
 
