@@ -80,4 +80,32 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source)
             assert.isEmpty(errors)
 
+    'Indented comment':
+        topic:
+            # This test text should never generate an error on the URL
+            # line. Instead, it should only report an error on line 2,
+            # unless errors are desactivated in comments.
+            # These tests work with the default line length limit of 80
+            # chars and the default indent size of 2.
+            '''
+            class Test
+              # Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta lacinia elementum.
+              # @see https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch fetch API on mozdev
+              request: (opts) ->
+                doSomething()
+            '''
+
+        'report error in comment by default, but ignore url': (source) ->
+            errors = coffeelint.lint(source)
+            assert.equal(errors.length, 1)
+            assert.equal(errors[0].lineNumber, 2)
+
+        'can ignore comments': (source) ->
+            config =
+                max_line_length:
+                    limitComments: false
+
+            errors = coffeelint.lint(source, config)
+            assert.isEmpty(errors)
+
 }).export(module)
