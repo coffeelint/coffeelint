@@ -1,3 +1,10 @@
+## [3.2.8](https://github.com/coffeelint/coffeelint/compare/v3.2.7...v3.2.8) (2020-07-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs to ^15.4.0 ([d252233](https://github.com/coffeelint/coffeelint/commit/d2522336e21a2b8718baa03ecf169785fbe06937))
+
 ## [3.2.7](https://github.com/coffeelint/coffeelint/compare/v3.2.6...v3.2.7) (2020-06-11)
 
 
