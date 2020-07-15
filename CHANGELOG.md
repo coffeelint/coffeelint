@@ -1,3 +1,10 @@
+## [3.2.10](https://github.com/coffeelint/coffeelint/compare/v3.2.9...v3.2.10) (2020-07-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency strip-json-comments to ^3.1.1 ([c0e112e](https://github.com/coffeelint/coffeelint/commit/c0e112e69639f8d96f1be54412d4b2ae12e87424))
+
 ## [3.2.9](https://github.com/coffeelint/coffeelint/compare/v3.2.8...v3.2.9) (2020-07-11)
 
 
