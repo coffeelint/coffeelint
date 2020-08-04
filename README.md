@@ -8,7 +8,7 @@ For guides on installing, using and configuring CoffeeLint, head over
 [here](https://coffeelint.github.io/).
 
 To suggest a feature, report a bug, or general discussion, head over
-[here](http://github.com/coffeelint/coffeelint/issues/).
+[here](https://github.com/coffeelint/coffeelint/issues/).
 
 ## Team
 
@@ -33,7 +33,7 @@ Past:
 1. Fork the repo locally.
 2. Run `npm install` to get dependencies.
 3. Create your rule in a single file as `src/rules/your_rule_here.coffee`, using the existing
-   rules as a guide. You may examine the AST and tokens using http://asaayers.github.io/clfiddle/.
+   rules as a guide. You may examine the AST and tokens using https://asaayers.github.io/clfiddle/.
 4. Add your test file `my_test.coffee` to the `test` directory.
 5. Register your rule in `src/coffeelint.coffee`.
 6. Run your test using `npm run testrule test/your_test_here.coffee`.
