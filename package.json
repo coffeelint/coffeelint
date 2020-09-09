@@ -26,7 +26,7 @@
     "ignore": "^5.1.8",
     "resolve": "^1.17.0",
     "strip-json-comments": "^3.1.1",
-    "yargs": "^15.4.1"
+    "yargs": "^16.0.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
