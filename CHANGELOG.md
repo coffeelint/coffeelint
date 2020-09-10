@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/coffeelint/coffeelint/compare/v3.2.10...v4.0.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* update deps ([3dde492](https://github.com/coffeelint/coffeelint/commit/3dde492531cd209b3c568346a0f08638a4cd69f4))
+
+
+### BREAKING CHANGES
+
+* Drop support for Node v8
+
 ## [3.2.10](https://github.com/coffeelint/coffeelint/compare/v3.2.9...v3.2.10) (2020-07-15)
 
 
