@@ -59,7 +59,7 @@ vows.describe(RULE).addBatch({
             source = new Array(81).join('X') + '\n'
 
             # Long URLs are ignored by default even in Literate code.
-            source += 'http://testing.example.com/really-really-long-url-' +
+            source += 'https://testing.example.com/really-really-long-url-' +
                 'that-shouldnt-have-to-be-split-to-avoid-the-lint-error'
 
         'long urls are ignored': (source) ->
@@ -73,7 +73,7 @@ vows.describe(RULE).addBatch({
             # see the following line as a comment even though it's in a string.
             # I don't think that's a problem.
             #
-            # http://testing.example.com/really-really-long-url-that-shouldnt-have-to-be-split-to-avoid-the-lint-error
+            # https://testing.example.com/really-really-long-url-that-shouldnt-have-to-be-split-to-avoid-the-lint-error
             '''
 
         'excludes long urls': (source) ->

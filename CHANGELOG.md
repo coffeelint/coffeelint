@@ -195,7 +195,7 @@ The v1.12.x versions are considered buggy and you should upgrade to v1.13.x if y
 
 ## [1.11.0](https://github.com/coffeelint/coffeelint/compare/v1.10.0...v1.11.0) (2015-08-19)
 
-- New config option `{ "extends": "coffeelint-config-myconfig" }` based on [eslint's shareable configs](http://eslint.org/docs/developer-guide/shareable-configs)
+- New config option `{ "extends": "coffeelint-config-myconfig" }` based on [eslint's shareable configs](https://eslint.org/docs/developer-guide/shareable-configs)
 - New rule `no_nested_string_interpolation`
 - New rule `no_private_function_fat_arrows`
 - New CLI option `--ext` to specify alternate file extensions to check
@@ -358,7 +358,7 @@ The v1.12.x versions are considered buggy and you should upgrade to v1.13.x if y
 - Added `arrow_spacing` rule (require spaces around arrows)
 - Added `empty_constructor_needs_parens`
 - Added `non_empty_constructor_needs_parens`
-- Added `duplicate_key` (http://jslinterrors.com/duplicate-key-a/)
+- Added `duplicate_key` (https://jslinterrors.com/duplicate-key-a/)
 - Added `no_trailing_whitespace.allowed_in_comments` rule option (Allow trailing space in comments. Created to allow markdown)
 - Added `newlines_after_classes` rule
 - Line length exception. Lines containing only a link are ignored.

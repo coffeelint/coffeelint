@@ -4,7 +4,7 @@ module.exports = class DuplicateKey
         # I don't know of any legitimate reason to define duplicate keys in an
         # object. It seems to always be a mistake, it's also a syntax error in
         # strict mode.
-        # See http://jslinterrors.com/duplicate-key-a/
+        # See https://jslinterrors.com/duplicate-key-a/
         name: 'duplicate_key'
         level: 'error'
         message: 'Duplicate key defined in object or class'
