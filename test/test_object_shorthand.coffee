@@ -34,12 +34,12 @@ vows.describe(RULE).addBatch({
             
             error = errors[0]
             assert.equal(error.lineNumber, 2)
-            assert.equal(error.message, "Use property-value shorthand when using explicit braces")
+            assert.equal(error.message, 'Use property-value shorthand when using explicit braces')
             assert.equal(error.rule, RULE)
             
             error = errors[1]
             assert.equal(error.lineNumber, 6)
-            assert.equal(error.message, "Use property-value shorthand when using explicit braces")
+            assert.equal(error.message, 'Use property-value shorthand when using explicit braces')
             assert.equal(error.rule, RULE)
 
 }).export(module)
