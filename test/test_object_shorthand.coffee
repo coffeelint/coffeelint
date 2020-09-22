@@ -43,5 +43,3 @@ vows.describe(RULE).addBatch({
             assert.equal(error.rule, RULE)
 
 }).export(module)
-
-# vim: expandtab shiftwidth=4 softtabstop=4

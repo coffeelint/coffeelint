@@ -37,5 +37,3 @@ module.exports = class ObjectShorthand
             context: "Use '{#{property[1]}}'"
         else
             null
-
-# vim: expandtab shiftwidth=4 softtabstop=4
