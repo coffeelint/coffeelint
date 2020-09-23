@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/coffeelint/coffeelint/compare/v4.0.0...v4.1.0) (2020-09-23)
+
+
+### Features
+
+* Add rule object_shorthand ([#90](https://github.com/coffeelint/coffeelint/issues/90)) ([d586228](https://github.com/coffeelint/coffeelint/commit/d586228214fccf110c3d044e9a75ad825f5518c7))
+
 # [4.0.0](https://github.com/coffeelint/coffeelint/compare/v3.2.10...v4.0.0) (2020-09-10)
 
 
