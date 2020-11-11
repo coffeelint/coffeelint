@@ -1,3 +1,10 @@
+## [4.1.2](https://github.com/coffeelint/coffeelint/compare/v4.1.1...v4.1.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* **deps:** bump resolve from 1.18.1 to 1.19.0 ([#98](https://github.com/coffeelint/coffeelint/issues/98)) ([e602414](https://github.com/coffeelint/coffeelint/commit/e602414b5269380bb0a26f01dea73b9970eec8e1))
+
 ## [4.1.1](https://github.com/coffeelint/coffeelint/compare/v4.1.0...v4.1.1) (2020-10-16)
 
 
