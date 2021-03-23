@@ -1,3 +1,11 @@
+## [4.1.4](https://github.com/coffeelint/coffeelint/compare/v4.1.3...v4.1.4) (2021-03-23)
+
+
+### Bug Fixes
+
+* update deps ([1bdf866](https://github.com/coffeelint/coffeelint/commit/1bdf866521540d6ffb5b7a1201a8831295b449bd))
+* update generated_coffeelint.json ([4aa1f2a](https://github.com/coffeelint/coffeelint/commit/4aa1f2acc0a57461b67f0e3c9e3debdadf41dab7))
+
 ## [4.1.3](https://github.com/coffeelint/coffeelint/compare/v4.1.2...v4.1.3) (2021-02-12)
 
 
