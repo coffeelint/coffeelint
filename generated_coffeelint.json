@@ -131,6 +131,9 @@
   "non_empty_constructor_needs_parens": {
     "level": "ignore"
   },
+  "object_shorthand": {
+    "level": "ignore"
+  },
   "prefer_english_operator": {
     "level": "ignore",
     "doubleNotLevel": "ignore",
