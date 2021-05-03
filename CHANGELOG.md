@@ -1,3 +1,10 @@
+## [4.1.5](https://github.com/coffeelint/coffeelint/compare/v4.1.4...v4.1.5) (2021-05-03)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 16.2.0 to 17.0.0 ([#132](https://github.com/coffeelint/coffeelint/issues/132)) ([62369be](https://github.com/coffeelint/coffeelint/commit/62369be532c4a6a3bb5f98fc7bbf86cd32264060))
+
 ## [4.1.4](https://github.com/coffeelint/coffeelint/compare/v4.1.3...v4.1.4) (2021-03-23)
 
 
