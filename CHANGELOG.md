@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/coffeelint/coffeelint/compare/v4.1.5...v5.0.0) (2021-05-04)
+
+
+### Bug Fixes
+
+* minimum node v12 ([#134](https://github.com/coffeelint/coffeelint/issues/134)) ([2f190bb](https://github.com/coffeelint/coffeelint/commit/2f190bbb0a351e3436fcb7d4ce19f87251f18115))
+
+
+### BREAKING CHANGES
+
+* drop support for node v10
+
 ## [4.1.5](https://github.com/coffeelint/coffeelint/compare/v4.1.4...v4.1.5) (2021-05-03)
 
 
