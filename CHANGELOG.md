@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/coffeelint/coffeelint/compare/v5.0.0...v5.0.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* **deps:** bump glob from 7.1.6 to 7.1.7 ([#137](https://github.com/coffeelint/coffeelint/issues/137)) ([cdf451b](https://github.com/coffeelint/coffeelint/commit/cdf451b3cc342d025eea128dae0328fdbf1191cf))
+
 # [5.0.0](https://github.com/coffeelint/coffeelint/compare/v4.1.5...v5.0.0) (2021-05-04)
 
 
