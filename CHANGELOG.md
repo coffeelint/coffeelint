@@ -1,3 +1,10 @@
+## [5.0.2](https://github.com/coffeelint/coffeelint/compare/v5.0.1...v5.0.2) (2021-08-16)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 17.1.0 to 17.1.1 ([#146](https://github.com/coffeelint/coffeelint/issues/146)) ([d7f9085](https://github.com/coffeelint/coffeelint/commit/d7f90857e09e051e6733dd67eea0f17144f91cfb))
+
 ## [5.0.1](https://github.com/coffeelint/coffeelint/compare/v5.0.0...v5.0.1) (2021-05-07)
 
 
