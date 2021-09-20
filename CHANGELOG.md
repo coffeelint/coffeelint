@@ -1,3 +1,10 @@
+## [5.0.3](https://github.com/coffeelint/coffeelint/compare/v5.0.2...v5.0.3) (2021-09-20)
+
+
+### Bug Fixes
+
+* **deps:** bump coffeescript from 2.5.1 to 2.6.0 ([#154](https://github.com/coffeelint/coffeelint/issues/154)) ([254351c](https://github.com/coffeelint/coffeelint/commit/254351c8c019449e176e14edc78b1f1d297f7906))
+
 ## [5.0.2](https://github.com/coffeelint/coffeelint/compare/v5.0.1...v5.0.2) (2021-08-16)
 
 
