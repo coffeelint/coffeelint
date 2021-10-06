@@ -1,4 +1,4 @@
-CoffeeLint
+ CoffeeLint
 ==========
 
 CoffeeLint is a style checker that helps keep CoffeeScript code
