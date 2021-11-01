@@ -25,6 +25,22 @@ findFile = (name, dir) ->
     else
         findFile name, parent
 
+findAnyFile = (names, dir) ->
+    dir = dir or process.cwd()
+    parent = path.resolve(dir, '../')
+    filepath = ''
+    for filename in names
+        filepath = path.normalize(path.join(dir, filename))
+        if findFileResults[filepath]
+            return findFileResults[filepath]
+        if fs.existsSync(filepath)
+            findFileResults[filepath] = filepath
+            return findFileResults[filepath]
+    if dir is parent
+        findFileResults[filepath] = null
+    else
+        findAnyFile names, parent
+
 # Possibly find CoffeeLint configuration within a package.json file.
 loadNpmConfig = (dir) ->
     fp = findFile('package.json', dir)
@@ -49,19 +65,21 @@ loadJSON = (filename, attr = null) ->
 # specific 'coffeelint.json' or a global 'coffeelint.json' in the home
 # directory.
 getConfig = (dir) ->
-    if (process.env.COFFEELINT_CONFIG and
-            fs.existsSync(process.env.COFFEELINT_CONFIG))
+    if (process.env.COFFEELINT_CONFIG and fs.existsSync(process.env.COFFEELINT_CONFIG))
         return loadJSON(process.env.COFFEELINT_CONFIG)
 
     npmConfig = loadNpmConfig(dir)
-    return npmConfig if npmConfig
-    projConfig = findFile('coffeelint.json', dir)
-    return loadJSON(projConfig)  if projConfig
+    if npmConfig
+        return npmConfig
 
-    envs = process.env.USERPROFILE or process.env.HOME or process.env.HOMEPATH
-    home = path.normalize(path.join(envs, 'coffeelint.json'))
-    if fs.existsSync(home)
-        return loadJSON(home)
+    projectConfig = findAnyFile(['coffeelint.json', '.coffeelintrc.json'], dir)
+    if projectConfig
+        return loadJSON(projectConfig)
+
+    homePath = process.env.USERPROFILE or process.env.HOME or process.env.HOMEPATH
+    homeConfig = path.normalize(path.join(homePath, 'coffeelint.json'))
+    if fs.existsSync(homeConfig)
+        return loadJSON(homeConfig)
 
 # configfinder is the only part of coffeelint that actually has the full
 # filename and can accurately resolve module names. This will find all of the
