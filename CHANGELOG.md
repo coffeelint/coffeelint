@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/coffeelint/coffeelint/compare/v5.0.5...v5.1.0) (2021-11-01)
+
+
+### Features
+
+* Allow ".coffeelintrc.json" config file ([#173](https://github.com/coffeelint/coffeelint/issues/173)) ([970fcd4](https://github.com/coffeelint/coffeelint/commit/970fcd48c15c29043b87be8b407f3b53fb495a7f))
+
 ## [5.0.5](https://github.com/coffeelint/coffeelint/compare/v5.0.4...v5.0.5) (2021-10-18)
 
 
