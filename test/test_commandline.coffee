@@ -117,6 +117,17 @@ vows.describe('commandline').addBatch({
         'works': (error, stdout, stderr) ->
             assert.isNull(error)
 
+    'with config alt name ".coffeelintrc.json"':
+        topic: () ->
+            args = [
+                'fixtures/config_alt_names/dot_coffeelintrc_dot_json/sevenspaces.coffee'
+            ]
+            commandline args, this.callback
+            return undefined
+
+        'works': (error, stdout, stderr) ->
+            assert.isNull(error)
+
     'with custom configuration':
         topic: () ->
             args = [
