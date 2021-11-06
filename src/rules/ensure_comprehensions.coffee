@@ -1,6 +1,7 @@
 module.exports = class EnsureComprehensions
 
     rule:
+        type: 'stylistic_issue'
         name: 'ensure_comprehensions'
         level: 'warn'
         message: 'Comprehensions must have parentheses around them'

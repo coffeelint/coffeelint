@@ -1,6 +1,7 @@
 module.exports = class NoImplicitBraces
 
     rule:
+        type: 'stylistic_issue'
         name: 'no_implicit_braces'
         level: 'ignore'
         message: 'Implicit braces are forbidden'

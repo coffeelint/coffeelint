@@ -1,6 +1,7 @@
 module.exports = class NoDebugger
 
     rule:
+        type: 'possible_error'
         name: 'no_debugger'
         level: 'warn'
         message: 'Found debugging code'

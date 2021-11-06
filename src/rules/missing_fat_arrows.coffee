@@ -13,6 +13,7 @@ containsButIsnt = (node, nIsThis, nIsClass) ->
 module.exports = class MissingFatArrows
 
     rule:
+        type: 'possible_error'
         name: 'missing_fat_arrows'
         level: 'ignore'
         is_strict: false

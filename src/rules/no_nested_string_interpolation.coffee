@@ -1,6 +1,7 @@
 module.exports = class NoNestedStringInterpolation
 
     rule:
+        type: 'possible_error'
         name: 'no_nested_string_interpolation'
         level: 'warn'
         message: 'Nested string interpolation is forbidden'

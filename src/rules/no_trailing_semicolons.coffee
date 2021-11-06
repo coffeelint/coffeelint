@@ -4,6 +4,7 @@ regexes =
 module.exports = class NoTrailingSemicolons
 
     rule:
+        type: 'stylistic_issue'
         name: 'no_trailing_semicolons'
         level: 'error'
         message: 'Line contains a trailing semicolon'

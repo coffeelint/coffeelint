@@ -1,6 +1,7 @@
 module.exports = class NoPlusPlus
 
     rule:
+        type: 'stylistic_issue'
         name: 'no_plusplus'
         level: 'ignore'
         message: 'The increment and decrement operators are forbidden'

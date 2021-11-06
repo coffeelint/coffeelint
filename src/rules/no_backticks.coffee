@@ -1,6 +1,7 @@
 module.exports = class NoBackticks
 
     rule:
+        type: 'possible_error'
         name: 'no_backticks'
         level: 'error'
         message: 'Backticks are forbidden'

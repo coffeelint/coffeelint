@@ -1,5 +1,6 @@
 module.exports = class ColonAssignmentSpacing
     rule:
+        type: 'stylistic_issue'
         name: 'colon_assignment_spacing'
         level: 'ignore'
         message: 'Colon assignment without proper spacing'

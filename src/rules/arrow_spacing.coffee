@@ -1,6 +1,7 @@
 module.exports = class ArrowSpacing
 
     rule:
+        type: 'stylistic_issue'
         name: 'arrow_spacing'
         level: 'ignore'
         message: 'Function arrows (-> and =>) must be spaced properly'

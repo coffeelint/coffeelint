@@ -1,6 +1,7 @@
 module.exports = class NoStandAloneAt
 
     rule:
+        type: 'stylistic_issue'
         name: 'no_stand_alone_at'
         level: 'ignore'
         message: '@ must not be used stand alone'
