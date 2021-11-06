@@ -12,10 +12,10 @@ hasCorrectPropertyType = (rule) ->
 
 vows.describe('coffeelint').addBatch({
 
-    "CoffeeLint's named rules":
+    'CoffeeLint\'s named rules':
         topic: namedRulesArray
 
-        'has correct property \"type\"': (rules) ->
+        'has correct property "type"': (rules) ->
             assert.isTrue(rules.every(hasCorrectPropertyType))
 
 }).export(module)
