@@ -1,7 +1,7 @@
 module.exports = class CyclomaticComplexity
 
     rule:
-        type: 'possible_error'
+        type: 'problem'
         name: 'cyclomatic_complexity'
         level: 'ignore'
         message: 'The cyclomatic complexity is too damn high'

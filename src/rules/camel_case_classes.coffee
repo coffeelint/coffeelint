@@ -4,7 +4,7 @@ regexes =
 module.exports = class CamelCaseClasses
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'camel_case_classes'
         level: 'error'
         message: 'Class name should be UpperCamelCased'

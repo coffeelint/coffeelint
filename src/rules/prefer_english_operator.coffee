@@ -1,7 +1,7 @@
 module.exports = class PreferEnglishOperator
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'prefer_english_operator'
         level: 'ignore'
         message: 'Don\'t use &&, ||, ==, !=, or !'

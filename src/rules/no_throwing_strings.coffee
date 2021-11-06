@@ -1,7 +1,7 @@
 module.exports = class NoThrowingStrings
 
     rule:
-        type: 'possible_error'
+        type: 'problem'
         name: 'no_throwing_strings'
         level: 'error'
         message: 'Throwing strings is forbidden'

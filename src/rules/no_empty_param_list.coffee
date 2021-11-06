@@ -1,7 +1,7 @@
 module.exports = class NoEmptyParamList
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'no_empty_param_list'
         level: 'ignore'
         message: 'Empty parameter list is forbidden'

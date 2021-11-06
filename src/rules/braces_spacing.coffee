@@ -1,7 +1,7 @@
 module.exports = class BracesSpacing
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'braces_spacing'
         level: 'ignore'
         spaces: 0

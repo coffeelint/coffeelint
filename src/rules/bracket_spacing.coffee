@@ -1,7 +1,7 @@
 module.exports = class BracketSpacing
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'bracket_spacing'
         level: 'ignore'
         spaces: 0

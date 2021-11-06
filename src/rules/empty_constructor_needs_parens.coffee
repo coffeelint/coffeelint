@@ -1,7 +1,7 @@
 module.exports = class EmptyConstructorNeedsParens
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'empty_constructor_needs_parens'
         level: 'ignore'
         message: 'Invoking a constructor without parens and without arguments'

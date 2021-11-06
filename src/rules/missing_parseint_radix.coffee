@@ -1,7 +1,7 @@
 module.exports = class ParseintRadix
 
     rule:
-        type: 'possible_error'
+        type: 'problem'
         name: 'missing_parseint_radix'
         level: 'warn'
         message: 'parseInt is missing the radix argument'

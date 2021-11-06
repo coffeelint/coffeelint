@@ -1,7 +1,7 @@
 module.exports = class TransformMessesUpLineNumbers
 
     rule:
-        type: 'stylistic_issue'
+        type: 'style'
         name: 'transform_messes_up_line_numbers'
         level: 'warn'
         message: 'Transforming source messes up line numbers'
