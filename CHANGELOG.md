@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/coffeelint/coffeelint/compare/v5.1.1...v5.2.0) (2021-11-07)
+
+
+### Features
+
+* add "type" property to rules ([#179](https://github.com/coffeelint/coffeelint/issues/179)) ([85f38a2](https://github.com/coffeelint/coffeelint/commit/85f38a21b7bf2ff5198ed3770ae89ff8a646798b))
+
 ## [5.1.1](https://github.com/coffeelint/coffeelint/compare/v5.1.0...v5.1.1) (2021-11-05)
 
 
