@@ -1,6 +1,7 @@
 module.exports = class NoInterpolationInSingleQuotes
 
     rule:
+        type: 'problem'
         name: 'no_interpolation_in_single_quotes'
         level: 'ignore'
         message: 'Interpolation in single quoted strings is forbidden'

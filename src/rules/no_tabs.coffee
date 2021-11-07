@@ -3,6 +3,7 @@ indentationRegex = /\S/
 module.exports = class NoTabs
 
     rule:
+        type: 'style'
         name: 'no_tabs'
         level: 'error'
         message: 'Line contains tab indentation'

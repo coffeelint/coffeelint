@@ -2,6 +2,7 @@
 module.exports = class MissingFatArrows
 
     rule:
+        type: 'style'
         name: 'prefer_fat_arrows_in_methods'
         level: 'ignore'
         message: 'Require fat arrows inside method bodies'

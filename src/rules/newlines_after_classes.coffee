@@ -1,6 +1,7 @@
 module.exports = class NewlinesAfterClasses
 
     rule:
+        type: 'style'
         name: 'newlines_after_classes'
         value: 3
         level: 'ignore'

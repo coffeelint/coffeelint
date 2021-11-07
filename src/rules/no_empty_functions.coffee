@@ -5,6 +5,7 @@ isEmptyCode = (node, astApi) ->
 module.exports = class NoEmptyFunctions
 
     rule:
+        type: 'problem'
         name: 'no_empty_functions'
         level: 'ignore'
         message: 'Empty function'

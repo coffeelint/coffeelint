@@ -1,6 +1,7 @@
 module.exports = class PreferLogicalOperator
 
     rule:
+        type: 'style'
         name: 'prefer_logical_operator'
         level: 'ignore'
         message: 'Don\'t use is, isnt, not, and, or, yes, on, no, off'

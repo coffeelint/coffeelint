@@ -7,6 +7,7 @@ regexes =
 module.exports = class NoTrailingWhitespace
 
     rule:
+        type: 'style'
         name: 'no_trailing_whitespace'
         level: 'error'
         message: 'Line ends with trailing whitespace'

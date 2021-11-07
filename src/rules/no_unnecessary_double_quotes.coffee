@@ -1,6 +1,7 @@
 module.exports = class NoUnnecessaryDoubleQuotes
 
     rule:
+        type: 'style'
         name: 'no_unnecessary_double_quotes'
         level: 'ignore'
         message: 'Unnecessary double quotes are forbidden'

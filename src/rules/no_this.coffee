@@ -1,6 +1,7 @@
 module.exports = class NoThis
 
     rule:
+        type: 'style'
         name: 'no_this'
         level: 'ignore'
         message: "Don't use 'this', use '@' instead"

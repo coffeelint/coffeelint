@@ -12,6 +12,7 @@ regexes =
 module.exports = class MaxLineLength
 
     rule:
+        type: 'style'
         name: 'max_line_length'
         value: 80
         level: 'error'

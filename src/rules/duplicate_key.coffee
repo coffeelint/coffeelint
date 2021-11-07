@@ -5,6 +5,7 @@ module.exports = class DuplicateKey
         # object. It seems to always be a mistake, it's also a syntax error in
         # strict mode.
         # See https://jslinterrors.com/duplicate-key-a/
+        type: 'problem'
         name: 'duplicate_key'
         level: 'error'
         message: 'Duplicate key defined in object or class'

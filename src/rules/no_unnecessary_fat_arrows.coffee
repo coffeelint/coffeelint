@@ -3,6 +3,7 @@ any = (arr, test) -> arr.reduce ((res, elt) -> res or test elt), false
 module.exports = class NoUnnecessaryFatArrows
 
     rule:
+        type: 'style'
         name: 'no_unnecessary_fat_arrows'
         level: 'warn'
         message: 'Unnecessary fat arrow'

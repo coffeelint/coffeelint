@@ -1,6 +1,7 @@
 module.exports = class NoPrivateFunctionFatArrows
 
     rule:
+        type: 'style'
         name: 'no_private_function_fat_arrows'
         level: 'warn'
         message: 'Used the fat arrow for a private function'

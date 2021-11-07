@@ -1,5 +1,6 @@
 module.exports = class SpacingAfterComma
     rule:
+        type: 'style'
         name: 'spacing_after_comma'
         level: 'ignore'
         ignore_elision: false

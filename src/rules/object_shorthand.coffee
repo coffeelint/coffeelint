@@ -1,5 +1,6 @@
 module.exports = class ObjectShorthand
     rule:
+        type: 'style'
         name: 'object_shorthand'
         level: 'ignore'
         message: 'Use property-value shorthand when using explicit braces'

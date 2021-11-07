@@ -1,6 +1,7 @@
 module.exports = class Indentation
 
     rule:
+        type: 'problem'
         name: 'indentation'
         value: 2
         level: 'error'

@@ -1,6 +1,7 @@
 module.exports = class LineEndings
 
     rule:
+        type: 'problem'
         name: 'line_endings'
         level: 'ignore'
         value: 'unix' # or 'windows'

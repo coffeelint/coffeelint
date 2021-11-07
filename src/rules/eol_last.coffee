@@ -1,6 +1,7 @@
 module.exports = class EOLLast
 
     rule:
+        type: 'style'
         name: 'eol_last'
         level: 'ignore'
         message: 'File does not end with a single newline'

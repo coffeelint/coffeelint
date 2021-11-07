@@ -3,6 +3,7 @@ indentationRegex = /\S/
 module.exports = class NoSpaces
 
     rule:
+        type: 'style'
         name: 'no_spaces'
         level: 'ignore'
         message: 'Line contains space indentation'

@@ -1,6 +1,7 @@
 module.exports = class NoImplicitParens
 
     rule:
+        type: 'style'
         name: 'no_implicit_parens'
         level: 'ignore'
         message: 'Implicit parens are forbidden'

@@ -3,6 +3,7 @@ ParentClass = require './empty_constructor_needs_parens.coffee'
 module.exports = class NonEmptyConstructorNeedsParens extends ParentClass
 
     rule:
+        type: 'style'
         name: 'non_empty_constructor_needs_parens'
         level: 'ignore'
         message: 'Invoking a constructor without parens and with arguments'

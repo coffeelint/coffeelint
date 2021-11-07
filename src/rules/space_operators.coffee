@@ -1,6 +1,7 @@
 module.exports = class SpaceOperators
 
     rule:
+        type: 'style'
         name: 'space_operators'
         level: 'ignore'
         message: 'Operators must be spaced properly'
