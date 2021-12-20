@@ -1,3 +1,10 @@
+## [5.2.2](https://github.com/coffeelint/coffeelint/compare/v5.2.1...v5.2.2) (2021-12-20)
+
+
+### Bug Fixes
+
+* **deps:** bump ignore from 5.1.9 to 5.2.0 ([#187](https://github.com/coffeelint/coffeelint/issues/187)) ([c2f8625](https://github.com/coffeelint/coffeelint/commit/c2f8625b7ebbe97559d5ee55e7cb1267416e9e58))
+
 ## [5.2.1](https://github.com/coffeelint/coffeelint/compare/v5.2.0...v5.2.1) (2021-12-01)
 
 
