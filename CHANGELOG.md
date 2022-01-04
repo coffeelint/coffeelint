@@ -1,3 +1,11 @@
+## [5.2.3](https://github.com/coffeelint/coffeelint/compare/v5.2.2...v5.2.3) (2022-01-04)
+
+
+### Bug Fixes
+
+* **deps:** bump resolve from 1.20.0 to 1.21.0 ([#189](https://github.com/coffeelint/coffeelint/issues/189)) ([466ac4b](https://github.com/coffeelint/coffeelint/commit/466ac4bb13dbe6fe19e791c1d3a90c7d10059511))
+* **deps:** update all deps ([c63d425](https://github.com/coffeelint/coffeelint/commit/c63d425f46e1f8a8b080c05046cf59ef132b1750))
+
 ## [5.2.2](https://github.com/coffeelint/coffeelint/compare/v5.2.1...v5.2.2) (2021-12-20)
 
 
