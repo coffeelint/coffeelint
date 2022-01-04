@@ -23,22 +23,22 @@
   "dependencies": {
     "coffeescript": "2.6.1",
     "glob": "^7.2.0",
-    "ignore": "^5.1.9",
-    "resolve": "^1.20.0",
+    "ignore": "^5.2.0",
+    "resolve": "^1.21.0",
     "strip-json-comments": "^3.1.1",
-    "yargs": "^17.2.1"
+    "yargs": "^17.3.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.2",
     "@semantic-release/npm": "^8.0.3",
-    "@semantic-release/release-notes-generator": "^10.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "browserify": "^17.0.0",
     "coffeeify": "^3.0.1",
-    "semantic-release": "^18.0.0",
-    "underscore": "^1.13.1",
+    "semantic-release": "^18.0.1",
+    "underscore": "^1.13.2",
     "vows": "^0.8.3"
   },
   "license": "MIT",
