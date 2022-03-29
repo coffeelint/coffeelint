@@ -59,7 +59,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish coffeelint.github.io
         if: steps.semantic_release.outputs.new_release_published == 'true'
-        uses: peter-evans/repository-dispatch@v1.1.3
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GH_TOKEN }}
           repository: coffeelint/coffeelint.github.io
