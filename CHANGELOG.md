@@ -1,3 +1,11 @@
+## [5.2.9](https://github.com/coffeelint/coffeelint/compare/v5.2.8...v5.2.9) (2022-05-16)
+
+
+### Bug Fixes
+
+* **deps:** bump glob from 8.0.1 to 8.0.3 ([#209](https://github.com/coffeelint/coffeelint/issues/209)) ([b51dafc](https://github.com/coffeelint/coffeelint/commit/b51dafc740f1a4b1a7c46ade93d862acd5d04f1f))
+* **deps:** bump yargs from 17.4.1 to 17.5.1 ([#208](https://github.com/coffeelint/coffeelint/issues/208)) ([5fd34f4](https://github.com/coffeelint/coffeelint/commit/5fd34f4faf26661dde836fd3f69c3e2f44954727))
+
 ## [5.2.8](https://github.com/coffeelint/coffeelint/compare/v5.2.7...v5.2.8) (2022-04-25)
 
 
