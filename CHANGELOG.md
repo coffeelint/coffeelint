@@ -1,3 +1,10 @@
+## [5.2.10](https://github.com/coffeelint/coffeelint/compare/v5.2.9...v5.2.10) (2022-09-30)
+
+
+### Bug Fixes
+
+* resolve to correct coffeelint file ([#220](https://github.com/coffeelint/coffeelint/issues/220)) ([6e02503](https://github.com/coffeelint/coffeelint/commit/6e025039fa0fd310a1a7154deca58bb3424efd09))
+
 ## [5.2.9](https://github.com/coffeelint/coffeelint/compare/v5.2.8...v5.2.9) (2022-05-16)
 
 
