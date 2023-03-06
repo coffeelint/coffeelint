@@ -37,7 +37,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "browserify": "^17.0.0",
     "coffeeify": "^3.0.1",
-    "semantic-release": "^20.1.0",
+    "semantic-release": "^20.1.1",
     "underscore": "^1.13.2",
     "vows": "^0.8.3"
   },
