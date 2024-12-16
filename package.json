@@ -24,7 +24,7 @@
     "coffeescript": "2.7.0",
     "glob": "^10.4.2",
     "ignore": "^5.3.2",
-    "resolve": "^1.22.8",
+    "resolve": "^1.22.9",
     "strip-json-comments": "^3.1.1",
     "yargs": "^17.7.2"
   },
