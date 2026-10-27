@@ -20,6 +20,28 @@ class LineApi
 
     lineNumber: 0
 
+    # Collect the lines that only contain a block comment (###). Lines where
+    # the comment shares space with code are not included.
+    findBlockCommentLines: () ->
+        lines = {}
+        for own _, tokens of @tokensByLine
+            for token in tokens when token.comments?
+                for comment in token.comments when comment.here
+                    { first_line, first_column, last_line,
+                      last_column_exclusive } = comment.locationData
+                    for n in [first_line..last_line]
+                        line = @lines[n]
+                        continue if n is first_line and
+                            line[...first_column].trim() isnt ''
+                        continue if n is last_line and
+                            line[last_column_exclusive..].trim() isnt ''
+                        lines[n] = true
+        lines
+
+    isBlockCommentLine: (lineNumber = @lineNumber) ->
+        @blockCommentLines ?= @findBlockCommentLines()
+        @blockCommentLines[lineNumber]?
+
     isLiterate: -> @literate
 
     # maintain the contextual information for class-related stuff

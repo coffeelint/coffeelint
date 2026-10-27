@@ -115,4 +115,44 @@ vows.describe(RULE).addBatch({
             errors = coffeelint.lint(source, config)
             assert.isEmpty(errors)
 
+    'Block comment':
+        topic: ->
+            long = new Array(91).join('X')
+            url = 'https://example.com/' + new Array(81).join('x')
+            """
+            ###
+            #{long}
+              #{url}
+            ###
+
+            class Test
+              ### #{long}
+              ###
+              request: ->
+                x = 1 ### #{long}
+                ###
+
+            s = '''
+            ###
+            #{long}
+            #{url}
+            ###
+            '''
+            """
+
+        'reports long lines by default, but ignores urls': (source) ->
+            errors = coffeelint.lint(source)
+            lineNumbers = (e.lineNumber for e in errors)
+            assert.deepEqual(lineNumbers, [2, 7, 10, 15, 16])
+
+        'can ignore comments': (source) ->
+            config =
+                max_line_length:
+                    limitComments: false
+
+            errors = coffeelint.lint(source, config)
+            lineNumbers = (e.lineNumber for e in errors)
+            # Code sharing a line with a comment and strings are still checked.
+            assert.deepEqual(lineNumbers, [10, 15, 16])
+
 }).export(module)

@@ -2,12 +2,7 @@ regexes =
     literateComment: ///
         ^\s*\#\s # indentation, up to comment followed by at least one space.
     ///
-    longUrlComment: ///
-      ^\s*\#\s # indentation, up to comment followed by at least one space.
-      .* # Any string may precedes url
-      http[^\s]+ # Actual link
-      .*$ # Line may end by other things
-    ///
+    url: /http[^\s]+/
 
 module.exports = class MaxLineLength
 
@@ -30,13 +25,17 @@ module.exports = class MaxLineLength
     lintLine: (line, lineApi) ->
         max = lineApi.config[@rule.name]?.value
         limitComments = lineApi.config[@rule.name]?.limitComments
-        isCommentLine = regexes.literateComment.test(line)
+        isLineComment = regexes.literateComment.test(line)
 
         lineLength = line.replace(/\s+$/, '').length
-        if lineApi.isLiterate() and isCommentLine
+        if lineApi.isLiterate() and isLineComment
             lineLength -= 2
 
-        if max and max < lineLength and not regexes.longUrlComment.test(line)
+        if max and max < lineLength
+            isCommentLine = isLineComment or lineApi.isBlockCommentLine()
+
+            if isCommentLine and regexes.url.test(line)
+                return
 
             unless limitComments
                 if isCommentLine
