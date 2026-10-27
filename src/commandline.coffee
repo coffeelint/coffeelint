@@ -171,6 +171,7 @@ reportAndExit = (errorReport, options) ->
 # Declare command line options.
 options = yargs
             .usage('Usage: coffeelint [options] source [...]')
+            .version(false)
             .alias('f', 'file')
             .alias('h', 'help')
             .alias('v', 'version')
