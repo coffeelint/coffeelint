@@ -1,3 +1,10 @@
+## [5.2.13](https://github.com/coffeelint/coffeelint/compare/v5.2.12...v5.2.13) (2026-10-27)
+
+
+### Bug Fixes
+
+* **deps:** bump coffeescript, ignore and strip-json-comments ([#481](https://github.com/coffeelint/coffeelint/issues/481)) ([4110c96](https://github.com/coffeelint/coffeelint/commit/4110c964d0af3f51ab988ec4e4700aaf1bc1598b))
+
 ## [5.2.12](https://github.com/coffeelint/coffeelint/compare/v5.2.11...v5.2.12) (2026-10-15)
 
 
