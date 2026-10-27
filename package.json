@@ -29,15 +29,8 @@
     "yargs": "^18.2.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^7.0.0",
-    "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/git": "^11.0.1",
-    "@semantic-release/github": "^12.0.10",
-    "@semantic-release/npm": "^13.2.0",
-    "@semantic-release/release-notes-generator": "^14.1.1",
     "browserify": "^17.0.1",
     "coffeeify": "^3.0.1",
-    "semantic-release": "^25.0.9",
     "underscore": "^1.13.8",
     "vows": "^0.8.3"
   },
