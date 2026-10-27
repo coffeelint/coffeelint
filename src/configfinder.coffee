@@ -5,7 +5,7 @@ JSHint does.
 
 fs = require 'fs'
 path = require 'path'
-stripComments = require 'strip-json-comments'
+stripComments = require('strip-json-comments').default
 resolve = require('resolve').sync
 
 # Cache for findFile

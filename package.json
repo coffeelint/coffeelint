@@ -11,7 +11,7 @@
   "author": "Tony Brix <Tony@Brix.ninja> (https://Tony.Brix.ninja)",
   "main": "./lib/coffeelint.js",
   "engines": {
-    "node": ">=12.x"
+    "node": "^20.19.0 || ^22.12.0 || >=23"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,11 @@
     "coffeelint": "./bin/coffeelint"
   },
   "dependencies": {
-    "coffeescript": "2.7.0",
+    "coffeescript": "2.7.1",
     "glob": "^13.0.6",
-    "ignore": "^7.0.13",
+    "ignore": "^7.0.14",
     "resolve": "^1.22.13",
-    "strip-json-comments": "^3.1.1",
+    "strip-json-comments": "^5.0.3",
     "yargs": "^18.2.0"
   },
   "devDependencies": {
