@@ -56,13 +56,38 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "lts/*"
       - name: Install Dependencies
         run: npm ci
+      - name: Verify Signatures
+        run: npm audit signatures
+      - name: Current Version
+        id: current
+        run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
       - name: Release 🎉
-        uses: cycjimmy/semantic-release-action@v8
-        id: semantic_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx \
+            --package semantic-release@25 \
+            --package @semantic-release/changelog@7 \
+            --package @semantic-release/git@11 \
+            semantic-release
+      # @semantic-release/npm bumps package.json only when a release is made
+      - name: Check Release
+        id: semantic_release
+        env:
+          PREVIOUS_VERSION: ${{ steps.current.outputs.version }}
+        run: |
+          version=$(node -p "require('./package.json').version")
+          if [ "$version" != "$PREVIOUS_VERSION" ]; then
+            echo "new_release_published=true" >> "$GITHUB_OUTPUT"
+            echo "new_release_version=$version" >> "$GITHUB_OUTPUT"
+          fi
       - name: Publish coffeelint.github.io
         if: steps.semantic_release.outputs.new_release_published == 'true'
         uses: peter-evans/repository-dispatch@v4
