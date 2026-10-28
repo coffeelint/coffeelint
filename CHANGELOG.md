@@ -1,3 +1,10 @@
+## [5.2.14](https://github.com/coffeelint/coffeelint/compare/v5.2.13...v5.2.14) (2026-10-28)
+
+
+### Bug Fixes
+
+* coffeelint cli version prints incorrect value ([#479](https://github.com/coffeelint/coffeelint/issues/479)) ([366b908](https://github.com/coffeelint/coffeelint/commit/366b908fe0d96ed207b183fa7bd1a91522ebd50e))
+
 ## [5.2.13](https://github.com/coffeelint/coffeelint/compare/v5.2.12...v5.2.13) (2026-10-27)
 
 
