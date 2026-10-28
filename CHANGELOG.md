@@ -1,3 +1,10 @@
+## [5.2.15](https://github.com/coffeelint/coffeelint/compare/v5.2.14...v5.2.15) (2026-10-28)
+
+
+### Bug Fixes
+
+* **max_line_length:** apply comment exemptions to block comments ([#480](https://github.com/coffeelint/coffeelint/issues/480)) ([98c0fb2](https://github.com/coffeelint/coffeelint/commit/98c0fb2f9b5a38e34920dc617be7f0bb968b0d71))
+
 ## [5.2.14](https://github.com/coffeelint/coffeelint/compare/v5.2.13...v5.2.14) (2026-10-28)
 
 
