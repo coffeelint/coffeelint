@@ -55,7 +55,17 @@ vows.describe('commandline').addBatch({
             assert.isNull(error)
             assert.isEmpty(stderr)
             assert.isString(stdout)
-            assert.include(stdout, coffeelint.VERSION)
+            assert.equal(stdout.trim(), coffeelint.VERSION)
+
+    'version short flag':
+        topic: () ->
+            commandline ['-v'], this.callback
+            return undefined
+
+        'prints the coffeelint version': (error, stdout, stderr) ->
+            assert.isNull(error)
+            assert.isEmpty(stderr)
+            assert.equal(stdout.trim(), coffeelint.VERSION)
 
     'with clean source':
         topic: () ->
