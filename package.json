@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "coffeescript": "2.7.1",
-    "glob": "^14.0.4",
+    "glob": "^14.0.6",
     "ignore": "^7.0.14",
     "resolve": "^1.22.14",
     "strip-json-comments": "^5.0.3",
